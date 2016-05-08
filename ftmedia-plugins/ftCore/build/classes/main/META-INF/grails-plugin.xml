@@ -1,0 +1,18 @@
+<plugin name='ftCore' version='0.1' grailsVersion='3.1.1 &gt; *'>
+  <type>ftcore.FtCoreGrailsPlugin</type>
+  <grailsVersion>3.1.1 &gt; *</grailsVersion>
+  <authorEmail></authorEmail>
+  <pluginExcludes>[grails-app/views/error.gsp]</pluginExcludes>
+  <author>Your name</author>
+  <documentation>http://grails.org/plugin/ft-core</documentation>
+  <profiles>[web]</profiles>
+  <name>ft-core</name>
+  <description>Brief summary/description of the plugin.
+</description>
+  <title>Ft Core</title>
+  <version />
+  <resources>
+    <resource>ftcore.UrlMappings</resource>
+    <resource>ftcore.Application</resource>
+  </resources>
+</plugin>

@@ -1,0 +1,7 @@
+include "ftmedia", "ftmedia-plugins/ftAdvice"
+include "ftmedia", "ftmedia-plugins/ftChildSafety"
+include "ftmedia", "ftmedia-plugins/ftCore"
+include "ftmedia", "ftmedia-plugins/ftExternalMedia"
+include "ftmedia", "ftmedia-plugins/ftLibraryMovie"
+include "ftmedia", "ftmedia-plugins/ftLibraryMusic"
+include "ftmedia", "ftmedia-plugins/ftPlay"
