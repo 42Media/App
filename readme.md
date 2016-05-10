@@ -15,3 +15,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + add new plugins
 + add new settings.gradle, which contains mappings between main app and plugins
 + add plugin dependencies in build.gradle
+
+#### 2016-05-10
++ add master layout
