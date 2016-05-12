@@ -4,29 +4,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
-        <g:layoutTitle default="42MMedia"/>
+        <g:layoutTitle default="42Media"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <asset:stylesheet src="application.css"/>
+    <asset:stylesheet src="bootstrap.css"/>
 
     <g:layoutHead/>
 </head>
-<body>
-
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-
-            </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
-            </div>
-        </div>
+<body class="container" >
+<ul class="nav nav-tabs" >
+    <div class="row">
+        <div class="col-xs-1"><li role="presentation"><h2><label for="suchText"><asset:image src="symbole/lupe.png" /></label></h2></li></div>
+        <div class="col-xs-2"><li role="presentation"><h2><input type="text" class="form-control" id="suchText" /></h2></li></div>
+        <div class="col-xs-2"><li role="presentation"><a href="#"><h2>Filme</h2></a></li></div>
+        <div class="col-xs-2"><li role="presentation"><a href="#"><h2>42Media</h2></a></li></div>
+        <div class="col-xs-2"><li role="presentation"><a href="#"><h2>Musik</h2></a></li></div>
+        <div class="col-xs-1"><li role="presentation">
+            <h2>
+                <asset:image src="symbole/left.png" width="22%"/>
+                <asset:image src="symbole/play.png" width="30%"/>
+                <asset:image src="symbole/right.png" width="22%"/>
+            </h2>
+        </li></div>
+        <div class="col-xs-2"><li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Profil<span class="caret"></span></h2></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Medien verwalten</a></li>
+                <li><a href="#">Nutzer verwalten</a></li>
+                <li><a href="#">Merkliste</a></li>
+                <li><a href="#">Einstellungen</a></li>
+                <li><a href="#">Abmelden</a></li>
+            </ul></li></div>
     </div>
-
+</ul>
     <g:layoutBody/>
 
     <div class="footer" role="contentinfo"></div>
