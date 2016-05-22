@@ -63,11 +63,12 @@ dependencies {
 
     compile project(':ftmedia-plugins/ftAdvice')
     compile project(':ftmedia-plugins/ftChildSafety')
-    compile project(':ftmedia-plugins/ftCore')
     compile project(':ftmedia-plugins/ftExternalMedia')
-    compile project(':ftmedia-plugins/ftLibraryMovie')
-    compile project(':ftmedia-plugins/ftLibraryMusic')
+    compile project(':ftmedia-plugins/ftLibrary')
     compile project(':ftmedia-plugins/ftPlay')
+    compile project(':ftmedia-plugins/ftCore')
+
+    compile 'org.grails.plugins:spring-security-core:3.1.1'
 }
 
 task wrapper(type: Wrapper) {

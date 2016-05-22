@@ -14,7 +14,7 @@ class MediaAsset {
     ParentalRating parentalRating
     String tagline
     
-    static hasOne = [file:File]
+    File file
     
     static constraints = {
         tagline {nullable: true}

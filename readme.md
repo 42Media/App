@@ -21,3 +21,9 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 
 #### 2016-05-12
 + modify master layout
+
+#### 2016-05-22
++ implement spring security plugin
++ create default user admin
++ change main.gsp
+
