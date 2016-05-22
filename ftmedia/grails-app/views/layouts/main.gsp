@@ -8,7 +8,10 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+    <asset:javascript src="jquery-2.2.0.min.js"/>
+    <asset:javascript src="bootstrap.js"/>
     <asset:stylesheet src="bootstrap.css"/>
+    <asset:stylesheet src="ftMedia/main.css"/>
 
     <g:layoutHead/>
 </head>
@@ -19,7 +22,7 @@
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <div style="margin: 0 20px 0 20px">
-                            <a href="/#">
+                            <a href="/">
                                 <h2>42Media</h2>
                             </a>
                         </div>
@@ -40,6 +43,8 @@
                                 </li></div>
                                 <div class="col-xs-2"><li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Profil<span class="caret"></span></h2></a>
                                     <ul class="dropdown-menu">
+                                        <li><a href="#">Willkommen ${user}</a></li>
+                                        <br>
                                         <li><a href="#">Medien verwalten</a></li>
                                         <li><a href="#">Nutzer verwalten</a></li>
                                         <li><a href="#">Merkliste</a></li>
@@ -55,6 +60,13 @@
     </header>
 
     <main>
+        <g:if test="${flash.error}">
+            <div class="alert alert-error" style="display: block">${flash.error}</div>
+        </g:if>
+        <g:if test="${flash.message}">
+            <div class="alert alert-info" style="display: block">${flash.message}</div>
+        </g:if>
+
         <g:layoutBody/>
     </main>
     <footer>

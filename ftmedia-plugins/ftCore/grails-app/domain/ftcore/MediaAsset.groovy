@@ -1,4 +1,4 @@
-package ftcore
+package ftCore
 
 /**
     @author:    atzscherlich
@@ -7,12 +7,12 @@ package ftcore
 */
 
 class MediaAsset {
-    Long id
-    MediaType type
-    Integer playCount
-    Date lastPlayed
-    ParentalRating parentalRating
-    String tagline
+    Long            id
+    MediaType       type
+    Integer         playCount
+    Date            lastPlayed
+    ParentalRating  parentalRating
+    String          tagline
     
     File file
     

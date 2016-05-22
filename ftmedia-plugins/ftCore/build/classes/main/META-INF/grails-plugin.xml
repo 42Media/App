@@ -13,10 +13,10 @@
   <version />
   <resources>
     <resource>ftcore.UrlMappings</resource>
-    <resource>ftcore.File</resource>
-    <resource>ftcore.MediaAsset</resource>
-    <resource>ftcore.MediaType</resource>
-    <resource>ftcore.ParentalRating</resource>
+    <resource>ftCore.File</resource>
+    <resource>ftCore.MediaAsset</resource>
+    <resource>ftCore.MediaType</resource>
+    <resource>ftCore.ParentalRating</resource>
     <resource>ftCore.security.Role</resource>
     <resource>ftCore.security.User</resource>
     <resource>ftCore.security.UserRole</resource>

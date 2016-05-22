@@ -1,4 +1,4 @@
-package ftcore
+package ftCore
 
 /**
     @author:    atzscherlich
@@ -8,15 +8,15 @@ package ftcore
 
 
 class File {
-    Long id
-    String path
-    String name
-    String extension
+    Long    id
+    String  path
+    String  name
+    String  extension
     Integer size
-    String creator
-    Date dateAdded
-    Date lastModified
-    String checksum
+    String  creator
+    Date    dateAdded
+    Date    lastModified
+    String  checksum
     
     
     static constraints = {

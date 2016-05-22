@@ -26,4 +26,7 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + implement spring security plugin
 + create default user admin
 + change main.gsp
-
++ add VideoAsset class
++ add MusicAsset class
++ create Scaffolding for default CRUD-Functionality
++ add modal functionality
