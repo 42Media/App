@@ -2,6 +2,9 @@ package ftcore
 
 import grails.converters.JSON
 import org.grails.web.json.JSONObject
+import grails.plugins.rest.client.RestBuilder
+import grails.plugins.rest.client.RestResponse
+
 
 class RestImportController {
 
