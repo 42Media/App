@@ -30,3 +30,7 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + add MusicAsset class
 + create Scaffolding for default CRUD-Functionality
 + add modal functionality
+
+#### 2016-05-24
++ add RestImportController
++ add dependencies for Rest Client
