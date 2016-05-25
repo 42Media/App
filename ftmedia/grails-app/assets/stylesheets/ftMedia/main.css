@@ -1,3 +1,8 @@
+main .row
+{
+    width: 90%;
+    margin: auto;
+}
 
 .errors,
 .message {

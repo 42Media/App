@@ -8,21 +8,22 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <asset:javascript src="jquery-2.2.0.min.js"/>
     <asset:javascript src="bootstrap.js"/>
     <asset:stylesheet src="bootstrap.css"/>
     <asset:stylesheet src="ftMedia/main.css"/>
 
+    <asset:javascript src="jquery-2.2.0.min.js"/>
+
     <g:layoutHead/>
 </head>
-<body class="container" >
+<body>
     <header>
         <sec:ifLoggedIn>
             <div class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <div style="margin: 0 20px 0 20px">
-                            <a href="/">
+                            <a href="/#">
                                 <h2>42Media</h2>
                             </a>
                         </div>
@@ -41,7 +42,9 @@
                                         <asset:image src="symbole/right.png" width="22%"/>
                                     </h2>
                                 </li></div>
-                                <div class="col-xs-2"><li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Profil<span class="caret"></span></h2></a>
+                                <div class="col-xs-2">
+                                    <div class="navbar-right">
+                                    <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><h2>Profil<span class="caret"></span></h2></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Willkommen ${user}</a></li>
                                         <br>
@@ -50,7 +53,7 @@
                                         <li><a href="#">Merkliste</a></li>
                                         <li><a href="#">Einstellungen</a></li>
                                         <li><a href="/logout">Abmelden</a></li>
-                                    </ul></li></div>
+                                    </ul></li></div></div>
                             </div>
                         </ul>
                     </div>
@@ -67,7 +70,9 @@
             <div class="alert alert-info" style="display: block">${flash.message}</div>
         </g:if>
 
-        <g:layoutBody/>
+        <div class="container-fluid">
+            <g:layoutBody/>
+        </div>
     </main>
     <footer>
         <div class="footer" role="contentinfo"></div>
