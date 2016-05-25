@@ -35,5 +35,9 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + add RestImportController
 + add dependencies for Rest Client
 
-#### 2016-05-26
+#### 2016-05-25
++ remove RestImportController
++ add restService
++ clean dependencies
 + change package names
+
