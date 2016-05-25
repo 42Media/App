@@ -1,4 +1,4 @@
-package ftLibrary
+package ftlibrary
 
 import grails.test.mixin.*
 import spock.lang.*

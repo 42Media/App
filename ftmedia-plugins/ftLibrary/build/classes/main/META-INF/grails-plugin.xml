@@ -12,12 +12,12 @@
   <title>Ft Library</title>
   <version />
   <resources>
-    <resource>ftLibrary.MusicAssetController</resource>
+    <resource>ftlibrary.MusicAssetController</resource>
     <resource>ftlibrary.UrlMappings</resource>
-    <resource>ftLibrary.VideoAssetController</resource>
-    <resource>ftLibrary.MusicAsset</resource>
-    <resource>ftLibrary.VideoAsset</resource>
-    <resource>ftLibrary.Genre</resource>
+    <resource>ftlibrary.VideoAssetController</resource>
+    <resource>ftlibrary.MusicAsset</resource>
+    <resource>ftlibrary.VideoAsset</resource>
+    <resource>ftlibrary.Genre</resource>
     <resource>ftlibrary.Application</resource>
   </resources>
 </plugin>

@@ -1,4 +1,4 @@
-package ftCore
+package ftcore
 
 /**
     @author:    atzscherlich

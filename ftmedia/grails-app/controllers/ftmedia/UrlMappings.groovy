@@ -1,7 +1,7 @@
 package ftmedia
 
-import ftLibrary.VideoAsset
-import ftLibrary.MusicAsset
+import ftlibrary.VideoAsset
+import ftlibrary.MusicAsset
 
 class UrlMappings {
 

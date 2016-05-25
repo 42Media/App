@@ -1,6 +1,6 @@
-import ftCore.security.Role
-import ftCore.security.User
-import ftCore.security.UserRole
+import ftcore.security.Role
+import ftcore.security.User
+import ftcore.security.UserRole
 
 class BootStrap {
 

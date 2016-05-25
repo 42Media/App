@@ -1,4 +1,4 @@
-package ftCore.security
+package ftcore.security
 
 import grails.gorm.DetachedCriteria
 import groovy.transform.ToString

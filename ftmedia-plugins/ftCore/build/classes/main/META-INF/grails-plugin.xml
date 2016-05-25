@@ -12,14 +12,15 @@
   <title>Ft Core</title>
   <version />
   <resources>
+    <resource>ftcore.RestImportController</resource>
     <resource>ftcore.UrlMappings</resource>
-    <resource>ftCore.File</resource>
-    <resource>ftCore.MediaAsset</resource>
-    <resource>ftCore.MediaType</resource>
-    <resource>ftCore.ParentalRating</resource>
-    <resource>ftCore.security.Role</resource>
-    <resource>ftCore.security.User</resource>
-    <resource>ftCore.security.UserRole</resource>
+    <resource>ftcore.File</resource>
+    <resource>ftcore.MediaAsset</resource>
+    <resource>ftcore.MediaType</resource>
+    <resource>ftcore.ParentalRating</resource>
+    <resource>ftcore.security.Role</resource>
+    <resource>ftcore.security.User</resource>
+    <resource>ftcore.security.UserRole</resource>
     <resource>ftcore.Application</resource>
   </resources>
 </plugin>

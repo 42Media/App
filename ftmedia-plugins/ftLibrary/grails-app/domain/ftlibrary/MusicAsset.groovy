@@ -1,6 +1,6 @@
-package ftLibrary
+package ftlibrary
 
-import ftCore.MediaAsset
+import ftcore.MediaAsset
 
 /**
  @author:    dheenemann

@@ -1,4 +1,4 @@
-package ftCore.security
+package ftcore.security
 
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString

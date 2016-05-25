@@ -1,8 +1,8 @@
 package ftmedia
 
-import ftCore.security.User
-import ftLibrary.VideoAsset
-import ftLibrary.MusicAsset
+import ftcore.security.User
+import ftlibrary.VideoAsset
+import ftlibrary.MusicAsset
 
 class MainController {
 

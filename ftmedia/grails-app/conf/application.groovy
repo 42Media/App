@@ -1,7 +1,7 @@
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'ftCore.security.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'ftCore.security.UserRole'
-grails.plugin.springsecurity.authority.className = 'ftCore.security.Role'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'ftcore.security.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'ftcore.security.UserRole'
+grails.plugin.springsecurity.authority.className = 'ftcore.security.Role'
 
 
 //Configurations
