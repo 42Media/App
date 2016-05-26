@@ -41,3 +41,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + clean dependencies
 + change package names
 
+#### 2016-05-26
++ debug RestService
++ add LastFMService
