@@ -2,6 +2,9 @@ import ftcore.security.Role
 import ftcore.security.User
 import ftcore.security.UserRole
 
+import ftcore.*
+
+
 class BootStrap {
 
     def init = { servletContext ->

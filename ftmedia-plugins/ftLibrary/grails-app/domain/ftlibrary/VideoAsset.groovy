@@ -16,7 +16,6 @@ class VideoAsset
     String  sortTitle
     String  director
     String  studio
-    Genre   genre
     String  country
     String  outline
     String  tagline
@@ -27,7 +26,8 @@ class VideoAsset
     int     imdbID
     int     tmdbID
 
-    MediaAsset mediaAsset
+    Genre       genre
+    MediaAsset  mediaAsset
 
     static constraints = {
         originalTitle display:false, nullable: true, blank: true

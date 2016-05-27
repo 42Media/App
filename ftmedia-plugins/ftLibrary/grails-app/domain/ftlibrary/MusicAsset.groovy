@@ -1,11 +1,11 @@
 package ftlibrary
 
-import ftcore.MediaAsset
+import ftcore.*
 
 /**
  @author:    dheenemann
- @version:   0.1
- @date:      2016-05-22
+ @version:   0.2
+ @date:      2016-05-27
  */
 
 class MusicAsset
@@ -29,7 +29,9 @@ class MusicAsset
     int         mbReleaseGroupID
     int         mbReleaseID
 
-    MediaAsset mediaAsset
+    MediaAsset  mediaAsset
+
+    Image       cover
 
     static constraints =
     {
@@ -49,6 +51,7 @@ class MusicAsset
         mbReleaseGroupID display:false, nullable: true, blank: true
         mbReleaseID display:false, nullable: true, blank: true
         mediaAsset display:false, nullable: true, blank: true
+        cover display:false, nullable:true, blank:true
     }
 
     String toString()

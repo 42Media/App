@@ -8,13 +8,13 @@ package ftcore
 
 class MediaAsset {
     Long            id
-    MediaType       type
     Integer         playCount
     Date            lastPlayed
     ParentalRating  parentalRating
     String          tagline
     
-    File file
+    File            file
+    MediaType       type
     
     static constraints = {
         tagline {nullable: true}

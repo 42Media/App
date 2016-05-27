@@ -89,7 +89,7 @@ class VideoAssetController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'videoAsset.label', default: 'VideoAsset'), videoAsset.id])
-                redirect action:"index", method:"GET"
+                redirect (uri: "/")
             }
             '*'{ render status: NO_CONTENT }
         }
