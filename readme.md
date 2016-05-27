@@ -44,3 +44,7 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 #### 2016-05-26
 + debug RestService
 + add LastFMService
+
+#### 2016-05-27
++ add link on name in index view, to show details
++ delete music oder video entries
