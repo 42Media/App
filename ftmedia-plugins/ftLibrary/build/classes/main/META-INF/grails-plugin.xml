@@ -19,5 +19,6 @@
     <resource>ftlibrary.VideoAsset</resource>
     <resource>ftlibrary.Genre</resource>
     <resource>ftlibrary.Application</resource>
+    <resource>ftlibrary.LastFMService</resource>
   </resources>
 </plugin>
