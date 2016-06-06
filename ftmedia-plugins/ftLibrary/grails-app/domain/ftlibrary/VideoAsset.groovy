@@ -3,9 +3,9 @@ package ftlibrary
 import ftcore.MediaAsset
 
 /**
- @author:    dheenemann
- @version:   0.1
- @date:      2016-05-22
+ @author:    atzscherlich
+ @version:   0.2
+ @date:      2016-06-06
  */
 
 class VideoAsset
@@ -18,16 +18,26 @@ class VideoAsset
     String  studio
     String  country
     String  outline
+
     String  tagline
 
+    String  plot
+    static mapping = {
+        plot type: "text"
+        outline type: "text"
+        tagline type: "text"
+        studio type: "text"
+    }
+
     int     year
-    int     plot
     int     runtime
     int     imdbID
     int     tmdbID
 
-    Genre       genre
-    MediaAsset  mediaAsset
+    static hasMany = {
+        genre:String
+        mediaAsset:MediaAsset
+    }
 
     static constraints = {
         originalTitle display:false, nullable: true, blank: true
@@ -56,5 +66,3 @@ class Genre
 {
     static final String THRILLER = 'Thriller'
 }
-
-
