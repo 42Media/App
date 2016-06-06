@@ -1,23 +1,29 @@
 package ftcore
 
 /**
-    @author:    atzscherlich
-    @version:   0.1
-    @date:      2016-05-18
-*/
+ @author:    atzscherlich
+ @version:   0.1
+ @date:      2016-05-18
+ */
 
 class MediaAsset {
-    Long            id
+    String            id
     Integer         playCount
     Date            lastPlayed
     ParentalRating  parentalRating
     String          tagline
-    
-    File            file
+
+    FileObject file
     MediaType       type
-    
+
+
+    static mapping = {
+        tagline type: "text"
+        id generator: 'uuid'
+    }
+
     static constraints = {
-        tagline {nullable: true}
+        tagline nullable: true
     }
 }
 
