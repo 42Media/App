@@ -49,3 +49,8 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + add link on name in index view, to show details
 + delete music oder video entries
 + add image domain
+
+#### 2016-06-05
++ add links in the menu for videos and music
++ edit video and music index page
+
