@@ -101,9 +101,8 @@ class MapperService {
         try {params.put  'trackNumber', tag.getFirst(ID3v24FieldKey.TRACK).toInteger()}
         catch (KeyNotFoundException e) {params.put  'trackNumber', -1}
 
-        try {params.put  'year', tag.getFirst(ID3v24FieldKey.YEAR).toInteger()}
-        catch (KeyNotFoundException e) {params.put  'year', -1}
-        catch (NumberFormatException e) {params.put 'year', tag.getFirst(ID3v24FieldKey.YEAR).toString()[0..3].toInteger()}
+        try {params.put  'year', tag.getFirst(ID3v24FieldKey.YEAR).toString()}
+        catch (KeyNotFoundException e) {params.put  'year', ''}
 
         try {params.put  'discNumber', tag.getFirst(ID3v24FieldKey.DISC_NO).toInteger()}
         catch (KeyNotFoundException e) {params.put  'discNumber', 1}
