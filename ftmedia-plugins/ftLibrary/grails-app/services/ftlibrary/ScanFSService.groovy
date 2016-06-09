@@ -1,6 +1,7 @@
 package ftlibrary
 
 import ftcore.FileObject
+import ftlibrary.VideoAsset
 import grails.transaction.Transactional
 import groovy.io.FileType
 
@@ -13,21 +14,21 @@ class ScanFSService {
         def types = ['.avi', '.mpg', '.mpeg', '.mkv', '.mp4','.m4v', '.wmv']
         def Map result = [:]
 
-        assert dir.isDirectory()
+        assert dir.isDirectory() == true
 
         dir.eachFileRecurse(FileType.FILES)
-        {
-            file ->
-                types.each
                 {
-                    ext -> if(file.name.endsWith(ext))
-                    {
-                        def path = file.path.toString().replace(file.name, '')
-                        def folder = path.tokenize('\\').getAt(-1)
-                        result.put(folder, file)
-                    }
+                    file ->
+                        types.each
+                                {
+                                    ext -> if(file.name.endsWith(ext))
+                                    {
+                                        def path = file.path.toString().replace(file.name, '')
+                                        def folder = path.tokenize('\\').getAt(-1)
+                                        result.put(folder, file)
+                                    }
+                                }
                 }
-        }
 
         return result
     }
@@ -79,19 +80,19 @@ class ScanFSService {
 
     private static List getFiles(File baseDir, List type)
     {
-        assert baseDir.isDirectory()
+        assert baseDir.isDirectory() == true
         assert type.size() > 0
 
         def files = []
 
         baseDir.eachFileRecurse(FileType.FILES)
-        {   file ->
-            type.each
-            {
-                ext -> if(file.name.endsWith(ext))
-                    files << file
-            }
-        }
+                {   file ->
+                    type.each
+                            {
+                                ext -> if(file.name.endsWith(ext))
+                                    files << file
+                            }
+                }
         return files
     }
 }
