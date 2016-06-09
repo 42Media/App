@@ -1,9 +1,10 @@
 package ftlibrary
-
 import ftcore.FileObject
 import ftcore.MediaAsset
 import ftcore.MediaType
+import ftlibrary.MusicAsset
 import ftlibrary.ScanFSService
+import ftlibrary.VideoAsset
 import grails.transaction.Transactional
 
 @Transactional
@@ -30,7 +31,15 @@ class LibraryService {
 
     static Integer scanMusic()
     {
-        return 42
+        def String src = '\\\\n36l\\musik\\emby'
+        def List<File> scanResult = ScanFSService.getMediaFiles(src, 'Music')
+        scanResult.each
+        {
+            file ->
+                processMusicItem(file)
+        }
+
+        return scanResult.size()
     }
 
 
@@ -42,36 +51,12 @@ class LibraryService {
         movie.save(flush: true)
         if(!movie)
             println(movie.errors.getAllErrors())
-        else
-            println('Movie saved')
     }
 
-    private static FileObject addFile(Map fileParams)
+    private static FileObject addFile(File file)
     {
-        def file
-        file = new FileObject(fileParams)
-        file.save(flush: true)
-
-    }
-
-    private static MediaAsset addMediaAsset(Map mediaAssetParams)
-    {
-        def mediaAsset
-        mediaAsset = new MediaAsset(mediaAssetParams)
-        mediaAsset.save(flush: true)
-    }
-
-    private static boolean processMovieItem(File file)
-    {
-        println('Processing: ' + file)
-
         def Map fileParams
         def FileObject fileObject
-        def Map mediaAssetParams
-        def MediaAsset mediaAsset
-        def Map assetParams
-        def VideoAsset asset
-
 
         try
         {
@@ -89,10 +74,15 @@ class LibraryService {
             println('File saved.')
         }
 
+        fileObject
+    }
+
+    private static MediaAsset addMediaAsset(Map mediaAssetParams)
+    {
+        def MediaAsset mediaAsset
+
         try
         {
-            mediaAssetParams.put 'file', fileObject
-            mediaAssetParams.put 'type', MediaType.MOVIE
             mediaAsset = new MediaAsset(mediaAssetParams)
         }
         catch (Exception e)
@@ -105,6 +95,26 @@ class LibraryService {
                 mediaAsset.save(flush: true)
             println('MediaAsset saved..')
         }
+
+        mediaAsset
+    }
+
+    private static boolean processMovieItem(File file)
+    {
+        println('Processing: ' + file)
+
+        def fileObject = addFile(file)
+
+        def Map mediaAssetParams = [:]
+
+        mediaAssetParams.put 'file', fileObject
+        mediaAssetParams.put 'type', MediaType.MOVIE
+
+        def mediaAsset = addMediaAsset(mediaAssetParams)
+
+        def Map assetParams
+        def VideoAsset asset
+
 
         try
         {
@@ -124,6 +134,46 @@ class LibraryService {
             println('VideoAsset saved...')
         }
 
-        FileObject && MediaAsset && asset
+        fileObject && mediaAsset && asset
+    }
+
+    private static boolean processMusicItem(File file)
+    {
+        println('Processing: ' + file)
+        println()
+
+        MapperService.mapMP3Tags(file)
+
+
+        def fileObject = addFile(file)
+
+        def Map mediaAssetParams = [:]
+
+        mediaAssetParams.put 'file', fileObject
+        mediaAssetParams.put 'type', MediaType.MUSIC
+
+        def mediaAsset = addMediaAsset(mediaAssetParams)
+
+        def Map assetParams
+        def MusicAsset asset
+
+        try
+        {
+            assetParams = MapperService.mapMP3Tags(file)
+            assetParams.put 'mediaAsset', mediaAsset
+            asset = new MusicAsset(assetParams)
+        }
+        catch (Exception e)
+        {
+            println(e.getMessage())
+        }
+        finally
+        {
+            if(asset)
+                asset.save(flush: true)
+            println('MusicAsset saved...')
+        }
+
+        fileObject && mediaAsset && asset
     }
 }
