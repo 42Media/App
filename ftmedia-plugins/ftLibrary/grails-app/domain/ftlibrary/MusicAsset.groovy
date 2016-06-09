@@ -3,8 +3,8 @@ package ftlibrary
 import ftcore.*
 
 /**
- @author:    dheenemann
- @version:   0.2
+ @author:    atzscherlich
+ @version:   0.3
  @date:      2016-05-27
  */
 
@@ -12,6 +12,7 @@ class MusicAsset
 {
 
     String      title
+    String      release
     String      trackArtist
     String      trackArtistSort
     String      albumArtist
@@ -19,19 +20,23 @@ class MusicAsset
     String      label
     String      country
     String      releaseType
-
+    String        year
+    String         mbAlbumArtistID
+    String         mbArtistID
+    String         mbTrackID
+    String         mbReleaseID
+    
     int         trackNumber
-    int         year
     int         discNumber
     int         runTime
-    int         mbAlbumArtistID
-    int         mbArtistID
-    int         mbReleaseGroupID
-    int         mbReleaseID
+    
 
-    MediaAsset  mediaAsset
 
     Image       cover
+
+    static hasMany = {
+        mediaAsset:MediaAsset
+    }
 
     static constraints =
     {
@@ -48,9 +53,8 @@ class MusicAsset
         runTime display:false, nullable: true, blank: true
         mbAlbumArtistID display:false, nullable: true, blank: true
         mbArtistID display:false, nullable: true, blank: true
-        mbReleaseGroupID display:false, nullable: true, blank: true
+        mbTrackID display:false, nullable: true, blank: true
         mbReleaseID display:false, nullable: true, blank: true
-        mediaAsset display:false, nullable: true, blank: true
         cover display:false, nullable:true, blank:true
     }
 
