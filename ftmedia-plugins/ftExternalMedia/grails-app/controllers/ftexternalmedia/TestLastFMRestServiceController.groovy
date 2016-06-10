@@ -1,4 +1,4 @@
-package ftcore
+package ftexternalmedia
 
 class TestLastFMRestServiceController {
 
