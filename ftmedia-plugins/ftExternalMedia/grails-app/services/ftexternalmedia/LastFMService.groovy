@@ -1,4 +1,5 @@
-package ftlibrary
+package ftexternalmedia
+
 
 import grails.converters.JSON
 import grails.transaction.Transactional
