@@ -54,3 +54,8 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + add links in the menu for videos and music
 + edit video and music index page
 
+#### 2016-06-08
++ add TestController for LastFMRestAPI
+
+#### 2016-06-10
++ move TestController for LastFMRestAPI and LastFMRestService to External Media
