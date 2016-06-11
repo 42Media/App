@@ -32,7 +32,7 @@ class LibraryService {
 
     static Integer scanMusic()
     {
-        def String src = '\\\\n36l\\musik\\emby'
+        def String src = '/Users/David/Documents/Projekte/App/files/music'
         def List<File> scanResult = ScanFSService.getMediaFiles(src, 'Music')
         scanResult.each
         {

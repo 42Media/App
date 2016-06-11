@@ -48,7 +48,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Willkommen ${user}</a></li>
                                         <br>
-                                        <li><a href="#">Medien verwalten</a></li>
+                                        <li><a href="/library/scan?type=music">Medien verwalten</a></li>
                                         <li><a href="#">Nutzer verwalten</a></li>
                                         <li><a href="#">Merkliste</a></li>
                                         <li><a href="#">Einstellungen</a></li>
@@ -84,6 +84,20 @@
         <asset:javascript src="application.js"/>
 
     </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-music" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

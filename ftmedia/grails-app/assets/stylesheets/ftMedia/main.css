@@ -41,6 +41,19 @@ main .row
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
+
+
+.fieldcontain div
+{
+    display: inline;
+}
+
+.fieldcontain span
+{
+    width: 200px;
+    margin-right: 50px;
+}
+
 .message {
     background: #f3f3ff;
     border: 1px solid #b2d1ff;

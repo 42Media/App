@@ -31,69 +31,12 @@
                 </div>
                 <div class="col-md-10">
                     <h4>Filme</h4>
-                    <div class="col-md-2">
-                        Film 1
-                    </div>
-                    <div class="col-md-2">
-                        Film 2
-                    </div>
-                    <div class="col-md-2">
-                        Film 3
-                    </div>
-                    <div class="col-md-2">
-                        Film 4
-                    </div>
-                    <div class="col-md-2">
-                        Film 5
-                    </div>
-                    <div class="col-md-2">
-                        Film 6
-                    </div>
-                    <div class="col-md-2">
-                        Film 7
-                    </div>
-                    <div class="col-md-2">
-                        Film 8
-                    </div>
-                    <div class="col-md-2">
-                        Film 9
-                    </div>
-                    <div class="col-md-2">
-                        Film 10
-                    </div>
-                    <div class="col-md-2">
-                        Film 11
-                    </div>
-                    <div class="col-md-2">
-                        Film 12
-                    </div>
-                    <div class="col-md-2">
-                        Film 13
-                    </div>
-                    <div class="col-md-2">
-                        Film 14
-                    </div>
-                    <div class="col-md-2">
-                        Film 15
-                    </div>
-                    <div class="col-md-2">
-                        Film 16
-                    </div>
-                    <div class="col-md-2">
-                        Film 17
-                    </div>
-                    <div class="col-md-2">
-                        Film 18
-                    </div>
-                    <div class="col-md-2">
-                        Film 19
-                    </div>
-                    <div class="col-md-2">
-                        Film 20
-                    </div>
-
+                    <g:each in="${videoAssetList}" var="video">
+                        <div class="col-md-2">
+                            <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-music">${video.title}</a>
+                        </div>
+                    </g:each>
                 </div>
-
             </div>
         </div>
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -102,8 +45,6 @@
                 </div>
             </div>
         </div>
-
-
 
     <!--
         <a href="#list-videoAsset" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

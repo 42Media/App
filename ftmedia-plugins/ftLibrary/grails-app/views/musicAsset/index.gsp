@@ -31,66 +31,12 @@
                 </div>
                 <div class="col-md-10">
                     <h4>Musikalben</h4>
-                    <div class="col-md-2">
-                        Titel 1
-                    </div>
-                    <div class="col-md-2">
-                        Titel 2
-                    </div>
-                    <div class="col-md-2">
-                        Titel 3
-                    </div>
-                    <div class="col-md-2">
-                        Titel 4
-                    </div>
-                    <div class="col-md-2">
-                        Titel 5
-                    </div>
-                    <div class="col-md-2">
-                        Titel 6
-                    </div>
-                    <div class="col-md-2">
-                        Titel 7
-                    </div>
-                    <div class="col-md-2">
-                        Titel 8
-                    </div>
-                    <div class="col-md-2">
-                        Titel 9
-                    </div>
-                    <div class="col-md-2">
-                        Titel 10
-                    </div>
-                    <div class="col-md-2">
-                        Titel 11
-                    </div>
-                    <div class="col-md-2">
-                        Titel 12
-                    </div>
-                    <div class="col-md-2">
-                        Titel 13
-                    </div>
-                    <div class="col-md-2">
-                        Titel 14
-                    </div>
-                    <div class="col-md-2">
-                        Titel 15
-                    </div>
-                    <div class="col-md-2">
-                        Titel 16
-                    </div>
-                    <div class="col-md-2">
-                        Titel 17
-                    </div>
-                    <div class="col-md-2">
-                        Titel 18
-                    </div>
-                    <div class="col-md-2">
-                        Titel 19
-                    </div>
-                    <div class="col-md-2">
-                        Titel 20
-                    </div>
+
+                    <g:each in="${musicAssetList}" var="music">
+                        <div class="col-md-2">
+                            <a data-toggle="modal" href="/music/show/${music.id}" data-target="#modal-music">${music.title}</a>
+                        </div>
+                    </g:each>
                 </div>
 
             </div>

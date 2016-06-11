@@ -71,19 +71,5 @@
     <div class="col-xs-1"><h3>&nbsp;</h3></div>
     <div class="col-xs-1"><h3><asset:image src="symbole/kreuz.png" /></h3></div>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="modal-music" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        </div>
-    </div>
-</div>
 </body>
 </html>
