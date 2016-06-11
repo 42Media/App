@@ -50,7 +50,8 @@ main .row
 
 .fieldcontain span
 {
-    width: 200px;
+    display: inline-block;
+    width: 40%;
     margin-right: 50px;
 }
 
