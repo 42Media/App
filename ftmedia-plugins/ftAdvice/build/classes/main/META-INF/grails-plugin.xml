@@ -1,18 +1,2 @@
-<plugin name='ftAdvice' version='0.1' grailsVersion='3.1.1 &gt; *'>
-  <type>ftadvice.FtAdviceGrailsPlugin</type>
-  <grailsVersion>3.1.1 &gt; *</grailsVersion>
-  <authorEmail></authorEmail>
-  <pluginExcludes>[grails-app/views/error.gsp]</pluginExcludes>
-  <author>Your name</author>
-  <documentation>http://grails.org/plugin/ft-advice</documentation>
-  <profiles>[web]</profiles>
-  <name>ft-advice</name>
-  <description>Brief summary/description of the plugin.
-</description>
-  <title>Ft Advice</title>
-  <version />
-  <resources>
-    <resource>ftadvice.UrlMappings</resource>
-    <resource>ftadvice.Application</resource>
-  </resources>
-</plugin>
+<plugin grailsVersion='3.1.1 &gt; *' name='ftAdvice' version='0.1'><type>ftadvice.FtAdviceGrailsPlugin</type><grailsVersion>3.1.1 &gt; *</grailsVersion><authorEmail></authorEmail><pluginExcludes>[grails-app/views/error.gsp]</pluginExcludes><author>Your name</author><documentation>http://grails.org/plugin/ft-advice</documentation><profiles>[web]</profiles><name>ft-advice</name><description>Brief summary/description of the plugin.
+</description><title>Ft Advice</title><version></version><resources><resource>ftadvice.UrlMappings</resource><resource>ftadvice.Application</resource></resources></plugin>

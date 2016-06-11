@@ -10,6 +10,7 @@
             <f:display bean="musicAsset" />
             <g:form resource="${this.musicAsset}" method="DELETE">
                 <fieldset class="buttons">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <g:link class="edit btn btn-primary"  action="edit" resource="${this.musicAsset}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
                     <input class="delete btn btn-danger" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                 </fieldset>

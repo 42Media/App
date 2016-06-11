@@ -46,7 +46,8 @@ class MusicAssetController {
         }
     }
 
-    def edit(MusicAsset musicAsset) {
+    def edit(MusicAsset musicAsset)
+    {
         respond musicAsset
     }
 
@@ -69,7 +70,7 @@ class MusicAssetController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'musicAsset.label', default: 'MusicAsset'), musicAsset.id])
-                redirect musicAsset
+                redirect (uri: "/")
             }
             '*'{ respond musicAsset, [status: OK] }
         }

@@ -14,6 +14,7 @@
   <resources>
     <resource>ftcore.UrlMappings</resource>
     <resource>ftcore.File</resource>
+    <resource>ftcore.FileObject</resource>
     <resource>ftcore.Image</resource>
     <resource>ftcore.MediaAsset</resource>
     <resource>ftcore.MediaType</resource>

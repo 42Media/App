@@ -69,7 +69,7 @@ class VideoAssetController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'videoAsset.label', default: 'VideoAsset'), videoAsset.id])
-                redirect videoAsset
+                redirect (uri: "/")
             }
             '*'{ respond videoAsset, [status: OK] }
         }

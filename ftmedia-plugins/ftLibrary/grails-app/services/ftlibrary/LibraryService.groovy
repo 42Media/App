@@ -12,7 +12,8 @@ class LibraryService {
 
     static Integer scanMovies()
     {
-        def String src = '\\\\n36l\\filme'
+        //def String src = '\\\\n36l\\filme'
+        String src = '/Users/David/Documents/Projekte/App/files/video'
         def Map scanResult = ScanFSService.getMovies(src)
 
         scanResult.each

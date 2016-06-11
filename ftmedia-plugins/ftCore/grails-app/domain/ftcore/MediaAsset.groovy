@@ -7,13 +7,13 @@ package ftcore
  */
 
 class MediaAsset {
-    String            id
+    String          id
     Integer         playCount
     Date            lastPlayed
     ParentalRating  parentalRating
     String          tagline
 
-    FileObject file
+    FileObject      file
     MediaType       type
 
 
@@ -24,6 +24,11 @@ class MediaAsset {
 
     static constraints = {
         tagline nullable: true
+    }
+
+    String toString()
+    {
+        return id
     }
 }
 

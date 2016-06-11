@@ -42,11 +42,11 @@
         </g:if>
 
         <g:each in="${videoList}" var="video">
-            <h3><a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal">${video.title}</a></h3>
+            <h3><a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">${video.title}</a></h3>
         </g:each>
 
     </div>
-    <div class="col-xs-1"><h3><a data-toggle="modal" href="/video/create" data-target="#modal"><asset:image src="symbole/kreuz.png" /></a></h3></div>
+    <div class="col-xs-1"><h3><a data-toggle="modal" href="/video/create" data-target="#modal-video"><asset:image src="symbole/kreuz.png" /></a></h3></div>
 </div>
 <div style="margin-top: 30px"></div>
 <div class="row">
@@ -57,10 +57,10 @@
         </g:if>
 
         <g:each in="${musicList}" var="music">
-            <h3><a data-toggle="modal" href="/music/show/${music.id}" data-target="#modal">${music.title}</a></h3>
+            <h3><a data-toggle="modal" href="/music/show/${music.id}" data-target="#modal-music">${music.title}</a></h3>
         </g:each>
     </div>
-    <div class="col-xs-1"><h3><a data-toggle="modal" href="/music/create" data-target="#modal"><asset:image src="symbole/kreuz.png" /></a></h3></div>
+    <div class="col-xs-1"><h3><a data-toggle="modal" href="/music/create" data-target="#modal-music"><asset:image src="symbole/kreuz.png" /></a></h3></div>
 </div>
 <div style="margin-top: 50px"></div>
 <div class="row">
@@ -73,7 +73,13 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal-music" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         </div>

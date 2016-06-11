@@ -22,6 +22,9 @@ class VideoAsset
     String  tagline
 
     String  plot
+
+    //MediaAsset mediaAsset
+
     static mapping = {
         plot type: "text"
         outline type: "text"
@@ -34,8 +37,9 @@ class VideoAsset
     int     imdbID
     int     tmdbID
 
+    //MediaAsset mediaAsset
+
     static hasMany = {
-        genre:String
         mediaAsset:MediaAsset
     }
 
@@ -44,7 +48,6 @@ class VideoAsset
         sortTitle display:false, nullable: true, blank: true
         director display:false, nullable: true, blank: true
         studio display:false, nullable: true, blank: true
-        genre display:false, nullable: true, blank: true
         country display:false, nullable: true, blank: true
         outline display:false, nullable: true, blank: true
         tagline display:false, nullable: true, blank: true
@@ -53,7 +56,6 @@ class VideoAsset
         runtime display:false, nullable: true, blank: true
         imdbID display:false, nullable: true, blank: true
         tmdbID display:false, nullable: true, blank: true
-        mediaAsset display:false, nullable: true, blank: true
     }
 
     String toString()
