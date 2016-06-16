@@ -40,7 +40,7 @@ class MusicAsset
 
     static constraints =
     {
-        trackArtist display:false, nullable: true, blank: true
+        trackArtist nullable: true, blank: true
         trackArtistSort display:false, nullable: true, blank: true
         albumArtist display:false, nullable: true, blank: true
         albumArtistSort display:false, nullable: true, blank: true
