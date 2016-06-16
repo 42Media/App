@@ -7,6 +7,7 @@ import grails.transaction.Transactional
 class MusicAssetController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def lastFMService
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -14,7 +15,10 @@ class MusicAssetController {
     }
 
     def show(MusicAsset musicAsset) {
-        respond musicAsset
+
+        def map = lastFMService.getMetaByTrack(musicAsset.trackArtist ,musicAsset.title)
+
+        respond musicAsset, model:[mapData:map]
     }
 
     def create() {
