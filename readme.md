@@ -63,3 +63,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 #### 2016-06-11
 + Bug Fixes in the has many relationships
 + layout modifications
+
+#### 2016-06-16
++ Converting LastFM Service to Prepared Map and added to Track
