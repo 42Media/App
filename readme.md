@@ -66,3 +66,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 
 #### 2016-06-16
 + Converting LastFM Service to Prepared Map and added to Track
+
+#### 2016-06-19
++ remove bug, which prevented removing old content of modal pages

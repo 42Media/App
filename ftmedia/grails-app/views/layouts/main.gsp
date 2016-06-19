@@ -8,11 +8,15 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+    <asset:javascript src="jquery-2.2.0.min.js"/>
+
     <asset:javascript src="bootstrap.js"/>
     <asset:stylesheet src="bootstrap.css"/>
-    <asset:stylesheet src="ftMedia/main.css"/>
 
-    <asset:javascript src="jquery-2.2.0.min.js"/>
+    <asset:javascript src="ftmedia/main.js"/>
+    <asset:stylesheet src="ftmedia/main.css"/>
+
+
 
     <g:layoutHead/>
 </head>
@@ -92,6 +96,7 @@
         </div>
     </div>
 </div>
+
 <div class="modal fade" id="modal-music" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
