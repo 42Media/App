@@ -16,9 +16,11 @@ class MusicAssetController {
 
     def show(MusicAsset musicAsset) {
 
-        def map = lastFMService.getMetaByTrack(musicAsset.trackArtist ,musicAsset.title)
+        def trackMap = lastFMService.getMetaByTrack(musicAsset.trackArtist ,musicAsset.title)
+        def artistMap = lastFMService.getMetaByArtist(musicAsset.trackArtist )
+        artistMap.remove("Name")
 
-        respond musicAsset, model:[mapData:map]
+        respond musicAsset, model:[mapData:trackMap ,mapDataArtist:artistMap]
     }
 
     def create() {
