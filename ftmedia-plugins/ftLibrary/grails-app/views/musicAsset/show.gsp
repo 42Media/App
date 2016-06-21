@@ -21,10 +21,17 @@
                     </g:form>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <t class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">REST-Daten</div>
-                <div class="panel-body">
+                <br class="panel-body">
+
+                    <g:each in="${mapData}" var="data">
+                        ${data.key}: ${data.value}</br>
+                    </g:each>
+                     <g:each in="${mapDataArtist}" var="data">
+                        ${data.key}: ${data.value}</br>
+                    </g:each>
 
                 </div>
             </div>
