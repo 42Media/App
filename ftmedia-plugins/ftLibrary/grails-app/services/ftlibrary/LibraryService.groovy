@@ -13,7 +13,7 @@ class LibraryService {
     static Integer scanMovies()
     {
         //def String src = '\\\\n36l\\filme'
-        String src = '/Users/David/Documents/Projekte/App/files/video'
+        String src = 'd:\\Daten\\Media\\Video'
         def Map scanResult = ScanFSService.getMovies(src)
 
         scanResult.each
@@ -78,6 +78,20 @@ class LibraryService {
         fileObject
     }
 
+    private static CoverArt addCover(File cover)
+    {
+        println('Adding: ' + cover.path)
+        Map params = [:]
+        params.put 'title', cover.name
+        params.put 'path', cover.path
+        params.put 'data', cover.bytes
+
+        CoverArt coverArt = new CoverArt(params)
+        coverArt.save(flush: true, failOnError: true)
+
+        coverArt
+    }
+
     private static MediaAsset addMediaAsset(Map mediaAssetParams)
     {
         def MediaAsset mediaAsset
@@ -104,25 +118,42 @@ class LibraryService {
     {
         println('Processing: ' + file)
 
-        def fileObject = addFile(file)
+        def fileObject  = null
+        def coverArt    = null
+        def mediaAsset  = null
+        def videoAsset  = null
 
-        def Map mediaAssetParams = [:]
+        Map mediaAssetParams    = [:]
+        Map assetParams         = [:]
+
+        fileObject = addFile(file)
+
+
 
         mediaAssetParams.put 'file', fileObject
         mediaAssetParams.put 'type', MediaType.MOVIE
 
-        def mediaAsset = addMediaAsset(mediaAssetParams)
+        mediaAsset = addMediaAsset(mediaAssetParams)
 
-        def Map assetParams
-        def VideoAsset asset
 
+        try
+        {
+            File cover = ScanFSService.getCoverFor(fileObject)
+            coverArt = addCover(cover)
+        }
+        catch(Exception e)
+        {
+            println(e.getMessage())
+            coverArt = null
+        }
 
         try
         {
             def nfo = ScanFSService.getNfoFor(fileObject)
             assetParams = MapperService.mapMovieNfo(nfo)
             assetParams.put 'mediaAsset', mediaAsset
-            asset = new VideoAsset(assetParams)
+            assetParams.put 'cover', coverArt
+            videoAsset = new VideoAsset(assetParams)
         }
         catch (Exception e)
         {
@@ -130,12 +161,15 @@ class LibraryService {
         }
         finally
         {
-            if(asset)
-                asset.save(flush: true)
-            println('VideoAsset saved...')
+            if(videoAsset)
+            {
+                videoAsset.save(flush: true, failOnError: true)
+                println('VideoAsset saved...')
+            }
+
         }
 
-        fileObject && mediaAsset && asset
+        fileObject && mediaAsset && videoAsset
     }
 
     private static boolean processMusicItem(File file)

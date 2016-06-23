@@ -51,11 +51,31 @@ class ScanFSService {
 
     static File getNfoFor(FileObject file)
     {
-        def String src = file.path
+        String src = file.path
         def nfo = getNfoFiles(src)
         if(!nfo.size())
             throw new Exception('No nfo available')
         nfo.get(0)
+
+    }
+
+    static File getCoverFor(FileObject file) throws FileNotFoundException
+    {
+        String src = file.path
+        def images = getMediaFiles(src, 'picture')
+        def cover = null
+        if(!images.size())
+            throw new FileNotFoundException('No artwork found for ' + file.name)
+
+        images.each {
+            artwork ->
+                if(artwork.name.endsWith('poster.jpg'))
+                    cover = artwork
+        }
+        if(!cover)
+            throw new FileNotFoundException('No cover found for ' + file.name)
+        else
+            return cover
 
     }
 

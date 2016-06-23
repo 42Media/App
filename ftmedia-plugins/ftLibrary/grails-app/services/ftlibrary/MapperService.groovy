@@ -27,18 +27,18 @@ class MapperService {
         def properties = new DefaultGrailsDomainClass(VideoAsset.class).persistentProperties
 
         properties.each
-                {
-                    if(it.name && data?.(it.name.toLowerCase()))
-                    {
+        {
+            if(it.name && data?.(it.name.toLowerCase()))
+            {
 
-                        def key = it.name
-                        def targetType = it.getTypePropertyName()
-                        def value = data?.(key.toLowerCase())
-                        if(value.text().size())
-                            param.put(key,  cast(value, targetType))
-                    }
+                def key = it.name
+                def targetType = it.getTypePropertyName()
+                def value = data?.(key.toLowerCase())
+                if(value.text().size())
+                    param.put(key,  cast(value, targetType))
+            }
 
-                }
+        }
 
         return param
     }
