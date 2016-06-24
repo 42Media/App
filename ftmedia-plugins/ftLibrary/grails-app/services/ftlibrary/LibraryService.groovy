@@ -198,6 +198,7 @@ class LibraryService {
             assetParams = MapperService.mapMP3Tags(file)
             assetParams.put 'mediaAsset', mediaAsset
             asset = new MusicAsset(assetParams)
+            asset.inserted = new Date()
         }
         catch (Exception e)
         {

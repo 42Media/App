@@ -79,3 +79,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + css modifications
 + Edit entries via modal pages
 + select path and upload entries via modalpage
++ insert "Insert Date"
++ show last inserted entry
++ insert filter for music entries

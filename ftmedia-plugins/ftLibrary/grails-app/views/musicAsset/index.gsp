@@ -10,28 +10,33 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li><a data-toggle="modal" href="/music/create" data-target="#modal">Musik hinzuf&uuml;gen</a></li>
-                        <li><a href="#">Zuletzt hinzuf&uuml;gt</a></li>
+                        <li><a data-toggle="modal" href="/music/create" data-target="#modal"><b>Musik hinzuf&uuml;gen</b></a></li>
+                        <li><a href="/music/showLast"><b>Zuletzt hinzuf&uuml;gt</b></a></li>
                         <li><a href="#">Beste Bewertung</a></li>
                         <li><a href="#">Bereits geh&ouml;rt</a></li>
                     </ul>
                     <h4>Filter</h4>
                     <ul class="nav nav-sidebar">
-                        <li><input type="text" class="form-control" id="filterMusicAlbum" placeholder="Album" /></li>
-                        <li><input type="text" class="form-control" id="filterMusicSaenger" placeholder="S&auml;nger" /></li>
-                        <li><input type="text" class="form-control" id="filterMusicProd" placeholder="Produzent" /></li>
-                        <li><input type="text" class="form-control" id="filterMusicGenre" placeholder="Genre" /></li>
+                        <g:form controller="musicAsset" method="POST">
+                            <li><input type="text" class="form-control" name="filterMusicAlbum" placeholder="Album" /></li>
+                            <li><input type="text" class="form-control" name="filterMusicSaenger" placeholder="S&auml;nger" /></li>
+                            <li><input type="text" class="form-control" name="filterMusicYear" placeholder="Jahr" /></li>
+                            <br>
+                            <g:actionSubmit class="btn btn-success" value="Filtern" action="filter"/>
+                        </g:form>
                     </ul>
                     <h4>Sortierung</h4>
                     <ul class="nav nav-sidebar">
-                        <li>Name&nbsp;&nbsp;<input class="btn btn-default" type="button" id="butMusNameAb" value="\/"><input class="btn btn-default" type="button" id="butMusNameAuf" value="/\"></li>
-                        <li>Datum&nbsp;<input class="btn btn-default" type="button" id="butMusDatumAb" value="\/"><input class="btn btn-default" type="button" id="butMusDatumAuf" value="/\"></li>
+
+                        Datum&nbsp;<a class="btn btn-default" href="/music/sort?tag=inserted&order=desc"> \/ </a> <a class="btn btn-default" href="/music/sort?tag=inserted&order=asc"> /\ </a>
+                        <br>
+                        Titel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-default" href="/music/sort?tag=title&order=desc"> \/ </a> <a class="btn btn-default" href="/music/sort?tag=title&order=asc"> /\ </a>
+
                     </ul>
 
                 </div>
                 <div class="col-md-10">
                     <h4>Musikalben</h4>
-
                     <g:each in="${musicAssetList}" var="music">
                         <div class="col-md-2">
                             <a data-toggle="modal" href="/music/show/${music.id}" data-target="#modal-music">${music.title}</a>

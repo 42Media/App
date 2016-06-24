@@ -9,22 +9,80 @@ class MusicAssetController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     def lastFMService
 
+
+    //Own Functions
+
+    def showLast()
+    {
+        def musicAssetList = MusicAsset.listOrderByInserted(max: 5, order: "desc")
+
+        render (view: 'index', model: [
+                musicAssetList: musicAssetList
+        ])
+    }
+
+    def sort()
+    {
+        def tag     = params.tag
+        def order   = params.order
+
+        def musicAssetList = [:]
+
+        if(tag == "inserted")
+        {
+            musicAssetList = MusicAsset.listOrderByInserted(order: order)
+        }
+
+        if(tag == "title")
+        {
+            musicAssetList = MusicAsset.listOrderByTitle(order: order)
+        }
+
+        render (view: 'index', model: [
+                musicAssetList: musicAssetList
+        ])
+    }
+
+    def filter()
+    {
+        println(params)
+
+        def album   = params.filterMusicAlbum
+        def saenger = params.filterMusicSaenger
+        def year    = params.int('filterMusicYear')
+
+        def musicAssetList = MusicAsset.findAllByTitleOrTrackArtistOrYear(album, saenger, year)
+
+        render (view: 'index', model: [
+                musicAssetList: musicAssetList
+        ])
+    }
+
+    //Scaffold Functions
+
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+        params.max = Math.min(max ?: 50, 100)
         respond MusicAsset.list(params), model:[musicAssetCount: MusicAsset.count()]
     }
 
     def show(MusicAsset musicAsset) {
 
-        def trackMap = lastFMService.getMetaByTrack(musicAsset.trackArtist ,musicAsset.title)
-        def artistMap = lastFMService.getMetaByArtist(musicAsset.trackArtist )
+        def trackMap = [:], artistMap = [:]
+
+        trackMap = lastFMService.getMetaByTrack(musicAsset.trackArtist ,musicAsset.title)
+        artistMap = lastFMService.getMetaByArtist(musicAsset.trackArtist )
+
         artistMap.remove("Name")
 
         respond musicAsset, model:[mapData:trackMap ,mapDataArtist:artistMap]
     }
 
     def create() {
-        respond new MusicAsset(params)
+
+        def musicAsset = new MusicAsset(params)
+            musicAsset.inserted = new Date()
+
+        respond musicAsset
     }
 
     @Transactional

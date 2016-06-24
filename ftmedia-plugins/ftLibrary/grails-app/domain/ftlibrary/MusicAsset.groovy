@@ -29,8 +29,8 @@ class MusicAsset
     int         trackNumber
     int         discNumber
     int         runTime
-    
 
+    Date inserted
 
     Image       cover
 
@@ -56,6 +56,7 @@ class MusicAsset
         mbTrackID display:false, nullable: true, blank: true
         mbReleaseID display:false, nullable: true, blank: true
         cover display:false, nullable:true, blank:true
+        inserted display: true, nullable: true, blank: true
     }
 
     String toString()
