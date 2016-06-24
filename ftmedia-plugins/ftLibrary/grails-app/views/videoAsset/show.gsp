@@ -14,7 +14,8 @@
                     <f:display bean="videoAsset" />
                     <g:form resource="${this.videoAsset}" method="DELETE">
                         <fieldset class="buttons">
-                            <g:link class="edit btn btn-primary" action="edit" resource="${this.videoAsset}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <g:link data-toggle="modal" data-target="#modal-music" class="edit btn btn-primary" action="edit" resource="${this.videoAsset}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
                             <input class="delete btn btn-danger" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                         </fieldset>
                     </g:form>
@@ -31,4 +32,3 @@
         </div>
     </body>
 </html>
-c

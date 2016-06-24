@@ -76,3 +76,5 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 
 #### 2016-06-24
 + Limit result to 10 at index page
++ css modifications
++ Edit entries via modal pages
