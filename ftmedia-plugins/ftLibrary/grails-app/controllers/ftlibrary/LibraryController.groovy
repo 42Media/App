@@ -1,32 +1,67 @@
 package ftlibrary
 
-class LibraryController {
+class LibraryController
+{
+    static allowedMethods = [editProfile:['POST', 'GET']]
+
+    def upload()
+    {
+        String type = params?.type ?: ''
+
+        render (view: 'upload', model: [
+                'type' : type
+        ])
+
+    }
 
     def scan()
     {
-        render('Calling: library.scan()<br />')
-        String type = params?.type ?: ''
+        println('Test' + params)
 
-        switch(type.toLowerCase())
+        def type = params.type
+        def path = params.path
+
+        if(path == '' || path == null)
         {
-            case 'movie':
-                render('Scanning movies...')
-                render(LibraryService.scanMovies() + " movies scanned")
-                break;
-            case 'series':
-                render(LibraryService.scanSeries())
-                render('Scanning series')
-                break;
-            case 'music':
-                def ts = new Date()
-                render(LibraryService.scanMusic())
-                ts = new Date() - ts
-                render('Duration: ' + ts)
-                render('Scanning music')
-                break;
-            default:
-                render('Scanning all')
-                break;
+            flash.error = "Der ausgewählte Pfad ist ungültig"
+        }else
+        {
+            switch(type.toLowerCase())
+            {
+                case 'movie':
+
+                    LibraryService.scanMovies(path)
+                    flash.message = "Movies successfull scanned"
+
+                    break;
+               case 'series':
+
+                    LibraryService.scanSeries(path)
+                    flash.message = "Movies successfull scanned"
+
+                    break;
+
+                case 'music':
+
+                    LibraryService.scanMusic(path)
+                    flash.message = "Movies successfull scanned"
+
+                    /*def ts = new Date()
+                    render(LibraryService.scanMusic())
+                    ts = new Date() - ts
+                    render('Duration: ' + ts)
+                    render('Scanning music')*/
+
+                    break;
+
+                default:
+                    redirect(uri: '/')
+                    break;
+
+            }
         }
+
+
+        redirect(uri: '/')
     }
 }

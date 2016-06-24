@@ -78,3 +78,4 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + Limit result to 10 at index page
 + css modifications
 + Edit entries via modal pages
++ select path and upload entries via modalpage

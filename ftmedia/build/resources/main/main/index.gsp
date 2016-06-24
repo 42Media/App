@@ -46,7 +46,12 @@
         </g:each>
 
     </div>
-    <div class="col-xs-1"><h3><a data-toggle="modal" href="/video/create" data-target="#modal-video"><asset:image src="symbole/kreuz.png" /></a></h3></div>
+    <div class="col-xs-1">
+        <div style="width: 100px">
+            <a data-toggle="modal" href="/video/create" data-target="#modal-video"><asset:image src="symbole/kreuz.png" /></a>
+            <a data-toggle="modal" href="/library/upload?type=movie" data-target="#modal-video"><asset:image src="symbole/kreuz.png" /></a>
+        </div>
+    </div>
 </div>
 <div style="margin-top: 30px"></div>
 <div class="row">
@@ -60,7 +65,12 @@
             <h3><a data-toggle="modal" href="/music/show/${music.id}" data-target="#modal-music">${music.title}</a></h3>
         </g:each>
     </div>
-    <div class="col-xs-1"><h3><a data-toggle="modal" href="/music/create" data-target="#modal-music"><asset:image src="symbole/kreuz.png" /></a></h3></div>
+    <div class="col-xs-1">
+        <div style="width: 100px">
+            <a data-toggle="modal" href="/music/create" data-target="#modal-music"><asset:image src="symbole/kreuz.png" /></a>
+            <a data-toggle="modal" href="/library/upload?type=music" data-target="#modal-music"><asset:image src="symbole/kreuz.png" /></a>
+        </div>
+    </div>
 </div>
 <div style="margin-top: 50px"></div>
 <div class="row">

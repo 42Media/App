@@ -10,10 +10,11 @@ import grails.transaction.Transactional
 @Transactional
 class LibraryService {
 
-    static Integer scanMovies()
+    static Integer scanMovies(String src)
     {
         //def String src = '\\\\n36l\\filme'
-        String src = 'd:\\Daten\\Media\\Video'
+        //String src = 'd:\\Daten\\Media\\Video'
+
         def Map scanResult = ScanFSService.getMovies(src)
 
         scanResult.each
@@ -30,9 +31,9 @@ class LibraryService {
         return 42
     }
 
-    static Integer scanMusic()
+    static Integer scanMusic(String src)
     {
-        def String src = '/Users/David/Documents/Projekte/App/files/music'
+        //def String src = '/Users/David/Documents/Projekte/App/files/music'
         def List<File> scanResult = ScanFSService.getMediaFiles(src, 'Music')
         scanResult.each
         {

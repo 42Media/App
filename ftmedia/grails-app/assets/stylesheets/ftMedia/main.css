@@ -19,8 +19,15 @@ main .row
 
 .form label
 {
+    display: block;
     margin: 20px 10px 0 0 ;
 }
+
+.scaffold-edit form .buttons
+{
+    margin-top: 20px;
+}
+
 
 .form input
 {
