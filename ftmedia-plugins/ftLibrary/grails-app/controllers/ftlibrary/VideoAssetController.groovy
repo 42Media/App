@@ -8,6 +8,63 @@ class VideoAssetController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    //Own Functions
+
+    def showLast()
+    {
+        def videoAssetList = VideoAsset.listOrderByInserted(max: 5, order: "desc")
+
+        render (view: 'index', model: [
+                videoAssetList: videoAssetList
+        ])
+    }
+
+    def sort()
+    {
+        def tag     = params.tag
+        def order   = params.order
+
+        def videoAssetList = [:]
+
+        if(tag == "inserted")
+        {
+            videoAssetList = VideoAsset.listOrderByInserted(order: order)
+        }
+
+        if(tag == "title")
+        {
+            videoAssetList = VideoAsset.listOrderByTitle(order: order)
+        }
+
+        render (view: 'index', model: [
+                videoAssetList: videoAssetList
+        ])
+    }
+
+    def filter()
+    {
+
+        def videoAssetList = [:]
+
+        def name        = params.filterVideoName
+        def director    = params.filterVideoDir
+        def year        = params.int('filterVideoYear')
+
+        if(!name && !director && !year)
+        {
+            videoAssetList = VideoAsset.findAll()
+        }else
+        {
+            videoAssetList = VideoAsset.findAllByTitleOrDirectorOrYear(name, director, year)
+        }
+
+        render (view: 'index', model: [
+                videoAssetList: videoAssetList
+        ])
+    }
+
+    //Scaffold Functions
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond VideoAsset.list(params), model:[videoAssetCount: VideoAsset.count()]
@@ -18,7 +75,11 @@ class VideoAssetController {
     }
 
     def create() {
-        respond new VideoAsset(params)
+
+        def videoAsset = new VideoAsset(params)
+            videoAsset.inserted = new Date()
+
+        respond videoAsset
     }
 
     @Transactional

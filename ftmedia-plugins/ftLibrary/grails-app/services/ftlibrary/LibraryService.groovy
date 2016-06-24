@@ -155,6 +155,7 @@ class LibraryService {
             assetParams.put 'mediaAsset', mediaAsset
             assetParams.put 'cover', coverArt
             videoAsset = new VideoAsset(assetParams)
+            videoAsset.inserted = new Date()
         }
         catch (Exception e)
         {

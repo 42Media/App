@@ -48,7 +48,7 @@ class MusicAsset
         country display:false, nullable: true, blank: true
         releaseType display:false, nullable: true, blank: true
         trackNumber display:false, nullable: true, blank: true
-        year display:false, nullable: true, blank: true
+        year display:true, nullable: true, blank: true
         discNumber display:false, nullable: true, blank: true
         runTime display:false, nullable: true, blank: true
         mbAlbumArtistID display:false, nullable: true, blank: true

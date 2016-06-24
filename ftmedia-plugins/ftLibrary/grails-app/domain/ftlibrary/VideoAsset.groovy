@@ -23,6 +23,8 @@ class VideoAsset
 
     String  plot
 
+    Date inserted
+
     //MediaAsset mediaAsset
 
     static mapping = {
@@ -46,16 +48,17 @@ class VideoAsset
     static constraints = {
         originalTitle display:false, nullable: true, blank: true
         sortTitle display:false, nullable: true, blank: true
-        director display:false, nullable: true, blank: true
+        director display:true, nullable: true, blank: true
         studio display:false, nullable: true, blank: true
         country display:false, nullable: true, blank: true
         outline display:false, nullable: true, blank: true
         tagline display:false, nullable: true, blank: true
-        year display:false, nullable: true, blank: true
+        year display:true, nullable: true, blank: true
         plot display:false, nullable: true, blank: true
         runtime display:false, nullable: true, blank: true
         imdbID display:false, nullable: true, blank: true
         tmdbID display:false, nullable: true, blank: true
+        inserted display: true, nullable: true, blank: true
     }
 
     String toString()

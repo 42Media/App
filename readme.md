@@ -82,3 +82,4 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + insert "Insert Date"
 + show last inserted entry
 + insert filter for music entries
++ insert filter for video entries

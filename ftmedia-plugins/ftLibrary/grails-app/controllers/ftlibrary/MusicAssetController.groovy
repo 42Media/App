@@ -45,13 +45,22 @@ class MusicAssetController {
 
     def filter()
     {
-        println(params)
+
+        def musicAssetList = [:]
 
         def album   = params.filterMusicAlbum
         def saenger = params.filterMusicSaenger
         def year    = params.int('filterMusicYear')
 
-        def musicAssetList = MusicAsset.findAllByTitleOrTrackArtistOrYear(album, saenger, year)
+        if(!album && !saenger && !year)
+        {
+            musicAssetList = MusicAsset.findAll()
+        }
+        else
+        {
+            musicAssetList = MusicAsset.findAllByTitleOrTrackArtistOrYear(album, saenger, year)
+        }
+
 
         render (view: 'index', model: [
                 musicAssetList: musicAssetList
