@@ -72,4 +72,7 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 
 #### 2016-06-21
 + removed bug, when no rest data available
-+ printing artist rest data in track 
++ printing artist rest data in track
+
+#### 2016-06-24
++ Limit result to 10 at index page
