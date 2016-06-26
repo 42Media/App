@@ -2,9 +2,10 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>42Media - Your Media Solution</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+    <asset:stylesheet src="videoasset.css" />
 </head>
 <body>
 <div class="row">
@@ -37,14 +38,19 @@
 <div class="row">
     <div class="col-xs-4"><a href="/video/index"><h3>Filme</h3></a></div>
     <div class="col-xs-7">
-        <g:if test="${videoList.isEmpty()}">
-            <h3>Keine Filminhalte vorhanden</h3>
-        </g:if>
-
-        <g:each in="${videoList}" var="video">
-            <h3><a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">${video.title}</a></h3>
-        </g:each>
-
+        <ul class="movieListStart">
+            <g:if test="${videoList.isEmpty()}">
+                <li><h3>Keine Filminhalte vorhanden</h3></li>
+            </g:if>
+            <g:each in="${videoList}" var="video">
+                <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">
+                    <li>
+                        <img src="/coverArt/show/${video.id}" />
+                        <h3>${video.title}</h3>
+                    </li>
+                </a>
+            </g:each>
+        </ul>
     </div>
     <div class="col-xs-1"><h3><a data-toggle="modal" href="/video/create" data-target="#modal-video"><asset:image src="symbole/kreuz.png" /></a></h3></div>
 </div>

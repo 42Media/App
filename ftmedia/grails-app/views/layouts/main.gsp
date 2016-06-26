@@ -15,7 +15,7 @@
 
     <asset:javascript src="ftmedia/main.js"/>
     <asset:stylesheet src="ftmedia/main.css"/>
-
+    <asset:stylesheet src="videoasset.css" />
 
 
     <g:layoutHead/>

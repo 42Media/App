@@ -36,7 +36,12 @@
                             <li>
                             <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">
                                 <img src="/coverArt/show/${video.id}" />
-                                <h3>${video.title}&nbsp;${video.year}</h3>
+                                <h3>
+                                    ${video.title}
+                                <g:if test="${video.year}">
+                                    &nbsp;(${video.year})
+                                </g:if>
+                                </h3>
                             </a>
                             </li>
                         </g:each>
@@ -53,25 +58,5 @@
                 </div>
             </div>
         </div>
-
-    <!--
-        <a href="#list-videoAsset" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
-        <div id="list-videoAsset" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:table collection="${videoAssetList}" />
-
-            <div class="pagination">
-                <g:paginate total="${videoAssetCount ?: 0}" />
-            </div>
-        </div>-->
     </body>
 </html>

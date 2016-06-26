@@ -12,8 +12,7 @@ class LibraryService {
 
     static Integer scanMovies()
     {
-        //def String src = '\\\\n36l\\filme'
-        String src = 'd:\\Daten\\Media\\Video'
+        String src = '\\\\n36l\\disk2\\Filme_1\\A'
         def Map scanResult = ScanFSService.getMovies(src)
 
         scanResult.each
@@ -32,8 +31,24 @@ class LibraryService {
 
     static Integer scanMusic()
     {
-        def String src = '/Users/David/Documents/Projekte/App/files/music'
-        def List<File> scanResult = ScanFSService.getMediaFiles(src, 'Music')
+        //String src = '\\\\n36l\\musik\\Emby\\Mike Oldfield'
+
+        List<String> src = new ArrayList<String>();
+
+        src.add('\\\\n36l\\musik\\Emby\\Mike Oldfield')
+        src.add('\\\\n36l\\musik\\Emby\\Morcheeba')
+        src.add('\\\\n36l\\musik\\Emby\\Norah Jones')
+        src.add('\\\\n36l\\musik\\Emby\\Portishead')
+        src.add('\\\\n36l\\musik\\Emby\\R.E.M_')
+        src.add('\\\\n36l\\musik\\Emby\\Skunk Anansie')
+
+        List<File> scanResult = new ArrayList<File>();
+
+        src.each {
+            println('Scanning: ' + it)
+            scanResult+= ScanFSService.getMediaFiles(it, 'Music')
+        }
+
         scanResult.each
         {
             file ->

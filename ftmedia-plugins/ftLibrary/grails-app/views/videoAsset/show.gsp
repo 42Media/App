@@ -10,6 +10,9 @@
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Eigene Daten</div>
+                <div class="VideoCover">
+                    <img src="/coverArt/show/${videoAsset.id}" width="100%" />
+                </div>
                 <div class="panel-body">
                     <f:display bean="videoAsset" />
                     <g:form resource="${this.videoAsset}" method="DELETE">
