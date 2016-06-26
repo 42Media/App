@@ -30,26 +30,26 @@ invokeTag('captureHead','sitemesh',6,[:],1)
 printHtmlPart(2)
 createTagBody(1, {->
 printHtmlPart(3)
-invokeTag('message','g',9,['code':("default.show.label"),'args':([entityName])],-1)
+invokeTag('message','g',9,['code':("default.show.label"),'args':([videoAsset])],-1)
 printHtmlPart(4)
-invokeTag('display','f',10,['bean':("videoAsset")],-1)
+invokeTag('display','f',14,['bean':("videoAsset")],-1)
 printHtmlPart(5)
 createTagBody(2, {->
 printHtmlPart(6)
 createTagBody(3, {->
-invokeTag('message','g',13,['code':("default.button.edit.label"),'default':("Edit")],-1)
+invokeTag('message','g',18,['code':("default.button.edit.label"),'default':("Edit")],-1)
 })
-invokeTag('link','g',13,['class':("edit btn btn-primary"),'action':("edit"),'resource':(this.videoAsset)],3)
+invokeTag('link','g',18,['data-toggle':("modal"),'data-target':("#modal-music"),'class':("edit btn btn-primary"),'action':("edit"),'resource':(this.videoAsset)],3)
 printHtmlPart(7)
 expressionOut.print(message(code: 'default.button.delete.label', default: 'Delete'))
 printHtmlPart(8)
 expressionOut.print(message(code: 'default.button.delete.confirm.message', default: 'Are you sure?'))
 printHtmlPart(9)
 })
-invokeTag('form','g',16,['resource':(this.videoAsset),'method':("DELETE")],2)
+invokeTag('form','g',21,['resource':(this.videoAsset),'method':("DELETE")],2)
 printHtmlPart(10)
 })
-invokeTag('captureBody','sitemesh',18,[:],1)
+invokeTag('captureBody','sitemesh',33,[:],1)
 printHtmlPart(11)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -57,7 +57,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1465138911984L
+public static final long LAST_MODIFIED = 1466936298310L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'none'

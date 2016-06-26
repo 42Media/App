@@ -23,6 +23,14 @@ class MusicAssetController {
         respond musicAsset, model:[mapData:trackMap ,mapDataArtist:artistMap]
     }
 
+    def showArtist(String artist) {
+        render(artist)
+    }
+
+    def showRelease(String release) {
+        render(release)
+    }
+
     def create() {
         respond new MusicAsset(params)
     }

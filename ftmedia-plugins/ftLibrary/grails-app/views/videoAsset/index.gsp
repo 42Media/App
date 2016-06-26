@@ -8,7 +8,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-3 col-md-2 sidebar">
+                <div class="sidebar">
                     <ul class="nav nav-sidebar">
                         <li><a data-toggle="modal" href="/video/create" data-target="#modal">Filme hinzuf&uuml;gen</a></li>
                         <li><a href="#">Zuletzt hinzuf&uuml;gt</a></li>
@@ -29,13 +29,21 @@
                     </ul>
 
                 </div>
-                <div class="col-md-10">
+                <div class="movieList">
                     <h4>Filme</h4>
-                    <g:each in="${videoAssetList}" var="video">
-                        <div class="col-md-2">
-                            <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-music">${video.title}</a>
-                        </div>
-                    </g:each>
+                    <ul>
+                        <g:each in="${videoAssetList}" var="video">
+                            <li>
+                            <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">
+                                <img src="/coverArt/show/${video.id}" />
+                                <h3>${video.title}&nbsp;${video.year}</h3>
+                            </a>
+                            </li>
+                        </g:each>
+                    </ul>
+                    <div class="pagination">
+                        <g:paginate total="${videoAssetCount ?: 0}" />
+                    </div>
                 </div>
             </div>
         </div>
