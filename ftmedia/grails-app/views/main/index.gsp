@@ -2,9 +2,10 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>42Media - Your Media Solution</title>
 
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+    <asset:stylesheet src="ftmedia.css" />
 </head>
 <body>
 <div class="row">
@@ -37,14 +38,20 @@
 <div class="row">
     <div class="col-xs-4"><a href="/video/index"><h3>Filme</h3></a></div>
     <div class="col-xs-7">
-        <g:if test="${videoList.isEmpty()}">
-            <h3>Keine Filminhalte vorhanden</h3>
-        </g:if>
+        <ul class="movieListStart">
+            <g:if test="${videoList.isEmpty()}">
+                <h3>Keine Filminhalte vorhanden</h3>
+            </g:if>
 
-        <g:each in="${videoList}" var="video">
-            <h3><a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">${video.title}</a></h3>
-        </g:each>
-
+            <g:each in="${videoList}" var="video">
+                <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">
+                    <li>
+                        <img src="/coverArt/show/${video.id}" />
+                        <h3>${video.title}</h3>
+                    </li>
+                </a>
+            </g:each>
+        </ul>
     </div>
     <div class="col-xs-1">
         <div style="width: 100px">
@@ -56,7 +63,7 @@
 <div style="margin-top: 30px"></div>
 <div class="row">
     <div class="col-xs-4"><a href="/music/index"><h3>Musik</h3></a></div>
-    <div class="col-xs-7">
+    <div class="col-xs-7 assetList">
         <g:if test="${musicList.isEmpty()}">
             <h3>Keine Musikinhalte vorhanden</h3>
         </g:if>

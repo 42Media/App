@@ -1,8 +1,5 @@
 package ftmedia
 
-import ftlibrary.VideoAsset
-import ftlibrary.MusicAsset
-
 class UrlMappings {
 
     static mappings = {
@@ -17,6 +14,7 @@ class UrlMappings {
 
         "/video/$action?/$id?(.$format)?"(controller:"videoAsset")
         "/music/$action?/$id?(.$format)?"(controller:"musicAsset")
+
 
         "/grails"(view:"/index")
 
