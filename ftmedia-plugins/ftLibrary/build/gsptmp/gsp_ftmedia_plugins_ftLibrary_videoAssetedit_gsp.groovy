@@ -15,86 +15,68 @@ registerSitemeshPreprocessMode()
 printHtmlPart(0)
 createTagBody(1, {->
 printHtmlPart(1)
-invokeTag('captureMeta','sitemesh',4,['gsp_sm_xmlClosingForEmptyTag':("/"),'name':("layout"),'content':("main")],-1)
-printHtmlPart(1)
-invokeTag('set','g',5,['var':("entityName"),'value':(message(code: 'videoAsset.label', default: 'VideoAsset'))],-1)
+invokeTag('set','g',4,['var':("entityName"),'value':(message(code: 'videoAsset.label', default: 'VideoAsset'))],-1)
 printHtmlPart(1)
 createTagBody(2, {->
 createTagBody(3, {->
-invokeTag('message','g',6,['code':("default.edit.label"),'args':([entityName])],-1)
+invokeTag('message','g',5,['code':("default.edit.label"),'args':([entityName])],-1)
 })
-invokeTag('captureTitle','sitemesh',6,[:],3)
+invokeTag('captureTitle','sitemesh',5,[:],3)
 })
-invokeTag('wrapTitleTag','sitemesh',6,[:],2)
+invokeTag('wrapTitleTag','sitemesh',5,[:],2)
 printHtmlPart(2)
 })
-invokeTag('captureHead','sitemesh',7,[:],1)
+invokeTag('captureHead','sitemesh',6,[:],1)
 printHtmlPart(2)
 createTagBody(1, {->
 printHtmlPart(3)
-invokeTag('message','g',9,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
+invokeTag('message','g',9,['code':("default.edit.label"),'args':([entityName])],-1)
 printHtmlPart(4)
-expressionOut.print(createLink(uri: '/'))
+if(true && (flash.message)) {
 printHtmlPart(5)
-invokeTag('message','g',12,['code':("default.home.label")],-1)
+expressionOut.print(flash.message)
 printHtmlPart(6)
-createTagBody(2, {->
-invokeTag('message','g',13,['code':("default.list.label"),'args':([entityName])],-1)
-})
-invokeTag('link','g',13,['class':("list"),'action':("index")],2)
+}
 printHtmlPart(7)
 createTagBody(2, {->
-invokeTag('message','g',14,['code':("default.new.label"),'args':([entityName])],-1)
-})
-invokeTag('link','g',14,['class':("create"),'action':("create")],2)
 printHtmlPart(8)
-invokeTag('message','g',18,['code':("default.edit.label"),'args':([entityName])],-1)
+createTagBody(3, {->
 printHtmlPart(9)
-if(true && (flash.message)) {
+if(true && (error in org.springframework.validation.FieldError)) {
 printHtmlPart(10)
-expressionOut.print(flash.message)
+expressionOut.print(error.field)
 printHtmlPart(11)
 }
 printHtmlPart(12)
-createTagBody(2, {->
+invokeTag('message','g',16,['error':(error)],-1)
 printHtmlPart(13)
-createTagBody(3, {->
+})
+invokeTag('eachError','g',17,['bean':(this.videoAsset),'var':("error")],3)
 printHtmlPart(14)
-if(true && (error in org.springframework.validation.FieldError)) {
+})
+invokeTag('hasErrors','g',19,['bean':(this.videoAsset)],2)
+printHtmlPart(7)
+createTagBody(2, {->
 printHtmlPart(15)
-expressionOut.print(error.field)
+invokeTag('hiddenField','g',21,['name':("version"),'value':(this.videoAsset?.version)],-1)
 printHtmlPart(16)
-}
+invokeTag('all','f',23,['bean':("videoAsset")],-1)
 printHtmlPart(17)
-invokeTag('message','g',25,['error':(error)],-1)
+expressionOut.print(message(code: 'default.button.update.label', default: 'Update'))
 printHtmlPart(18)
 })
-invokeTag('eachError','g',26,['bean':(this.videoAsset),'var':("error")],3)
+invokeTag('form','g',29,['resource':(this.videoAsset),'method':("PUT")],2)
 printHtmlPart(19)
 })
-invokeTag('hasErrors','g',28,['bean':(this.videoAsset)],2)
-printHtmlPart(12)
-createTagBody(2, {->
+invokeTag('captureBody','sitemesh',31,[:],1)
 printHtmlPart(20)
-invokeTag('hiddenField','g',30,['name':("version"),'value':(this.videoAsset?.version)],-1)
-printHtmlPart(21)
-invokeTag('all','f',32,['bean':("videoAsset")],-1)
-printHtmlPart(22)
-expressionOut.print(message(code: 'default.button.update.label', default: 'Update'))
-printHtmlPart(23)
-})
-invokeTag('form','g',37,['resource':(this.videoAsset),'method':("PUT")],2)
-printHtmlPart(24)
-})
-invokeTag('captureBody','sitemesh',39,[:],1)
-printHtmlPart(25)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1465138911965L
+public static final long LAST_MODIFIED = 1466758936885L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'none'

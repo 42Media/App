@@ -32,39 +32,41 @@ invokeTag('captureHead','sitemesh',7,[:],1)
 printHtmlPart(2)
 createTagBody(1, {->
 printHtmlPart(3)
-invokeTag('message','g',109,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
-printHtmlPart(4)
-expressionOut.print(createLink(uri: '/'))
-printHtmlPart(5)
-invokeTag('message','g',112,['code':("default.home.label")],-1)
-printHtmlPart(6)
 createTagBody(2, {->
-invokeTag('message','g',113,['code':("default.new.label"),'args':([entityName])],-1)
+printHtmlPart(4)
+invokeTag('actionSubmit','g',25,['class':("btn btn-success"),'value':("Filtern"),'action':("filter")],-1)
+printHtmlPart(5)
 })
-invokeTag('link','g',113,['class':("create"),'action':("create")],2)
+invokeTag('form','g',26,['controller':("videoAsset"),'method':("POST")],2)
+printHtmlPart(6)
+for( video in (videoAssetList) ) {
 printHtmlPart(7)
-invokeTag('message','g',117,['code':("default.list.label"),'args':([entityName])],-1)
+expressionOut.print(video.id)
 printHtmlPart(8)
-if(true && (flash.message)) {
+expressionOut.print(video.id)
 printHtmlPart(9)
-expressionOut.print(flash.message)
+expressionOut.print(video.title)
 printHtmlPart(10)
-}
+if(true && (video.year)) {
 printHtmlPart(11)
-invokeTag('table','f',121,['collection':(videoAssetList)],-1)
+expressionOut.print(video.year)
 printHtmlPart(12)
-invokeTag('paginate','g',124,['total':(videoAssetCount ?: 0)],-1)
+}
 printHtmlPart(13)
-})
-invokeTag('captureBody','sitemesh',127,[:],1)
+}
 printHtmlPart(14)
+invokeTag('paginate','g',54,['total':(videoAssetCount ?: 0)],-1)
+printHtmlPart(15)
+})
+invokeTag('captureBody','sitemesh',65,[:],1)
+printHtmlPart(16)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1465146642459L
+public static final long LAST_MODIFIED = 1467380304251L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'none'

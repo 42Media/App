@@ -30,34 +30,36 @@ invokeTag('captureHead','sitemesh',6,[:],1)
 printHtmlPart(2)
 createTagBody(1, {->
 printHtmlPart(3)
-invokeTag('message','g',9,['code':("default.show.label"),'args':([entityName])],-1)
+invokeTag('message','g',9,['code':("default.show.label"),'args':([videoAsset])],-1)
 printHtmlPart(4)
-invokeTag('display','f',10,['bean':("videoAsset")],-1)
+expressionOut.print(videoAsset.id)
 printHtmlPart(5)
-createTagBody(2, {->
+invokeTag('display','f',17,['bean':("videoAsset")],-1)
 printHtmlPart(6)
-createTagBody(3, {->
-invokeTag('message','g',13,['code':("default.button.edit.label"),'default':("Edit")],-1)
-})
-invokeTag('link','g',13,['class':("edit btn btn-primary"),'action':("edit"),'resource':(this.videoAsset)],3)
+createTagBody(2, {->
 printHtmlPart(7)
-expressionOut.print(message(code: 'default.button.delete.label', default: 'Delete'))
-printHtmlPart(8)
-expressionOut.print(message(code: 'default.button.delete.confirm.message', default: 'Are you sure?'))
-printHtmlPart(9)
+createTagBody(3, {->
+invokeTag('message','g',21,['code':("default.button.edit.label"),'default':("Edit")],-1)
 })
-invokeTag('form','g',16,['resource':(this.videoAsset),'method':("DELETE")],2)
+invokeTag('link','g',21,['data-toggle':("modal"),'data-target':("#modal-music"),'class':("edit btn btn-primary"),'action':("edit"),'resource':(this.videoAsset)],3)
+printHtmlPart(8)
+expressionOut.print(message(code: 'default.button.delete.label', default: 'Delete'))
+printHtmlPart(9)
+expressionOut.print(message(code: 'default.button.delete.confirm.message', default: 'Are you sure?'))
 printHtmlPart(10)
 })
-invokeTag('captureBody','sitemesh',18,[:],1)
+invokeTag('form','g',24,['resource':(this.videoAsset),'method':("DELETE")],2)
 printHtmlPart(11)
+})
+invokeTag('captureBody','sitemesh',29,[:],1)
+printHtmlPart(12)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1465138911984L
+public static final long LAST_MODIFIED = 1467381235135L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'none'

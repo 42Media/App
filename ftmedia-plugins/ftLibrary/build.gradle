@@ -57,6 +57,7 @@ dependencies {
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     compile 'org.jaudiotagger:jaudiotagger:2.0.1'
     compile project(':ftmedia-plugins/ftCore')
+    compile project(':ftmedia-plugins/ftExternalMedia')
 }
 
 task wrapper(type: Wrapper) {
