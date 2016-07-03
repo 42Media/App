@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":ftmedia" external.linked.project.path="$MODULE_DIR$/../../../ftmedia" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="ftmedia" external.system.module.version="0.1" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../ftmedia">
+      <excludeFolder url="file://$MODULE_DIR$/../../../ftmedia/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../ftmedia/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/App.iml" filepath="$PROJECT_DIR$/.idea/modules/App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia/ftmedia.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia/ftmedia.iml" group="ftmedia" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice.iml" group="ftmedia-plugins/ftAdvice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice_ast.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice_ast.iml" group="ftmedia-plugins/ftAdvice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice_main.iml" group="ftmedia-plugins/ftAdvice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftAdvice/ftmedia-plugins_ftAdvice_test.iml" group="ftmedia-plugins/ftAdvice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety.iml" group="ftmedia-plugins/ftChildSafety" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety_ast.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety_ast.iml" group="ftmedia-plugins/ftChildSafety" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety_main.iml" group="ftmedia-plugins/ftChildSafety" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftChildSafety/ftmedia-plugins_ftChildSafety_test.iml" group="ftmedia-plugins/ftChildSafety" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore.iml" group="ftmedia-plugins/ftCore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore_ast.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore_ast.iml" group="ftmedia-plugins/ftCore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore_main.iml" group="ftmedia-plugins/ftCore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftCore/ftmedia-plugins_ftCore_test.iml" group="ftmedia-plugins/ftCore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia.iml" group="ftmedia-plugins/ftExternalMedia" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia_ast.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia_ast.iml" group="ftmedia-plugins/ftExternalMedia" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia_main.iml" group="ftmedia-plugins/ftExternalMedia" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftExternalMedia/ftmedia-plugins_ftExternalMedia_test.iml" group="ftmedia-plugins/ftExternalMedia" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary.iml" group="ftmedia-plugins/ftLibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary_ast.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary_ast.iml" group="ftmedia-plugins/ftLibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary_main.iml" group="ftmedia-plugins/ftLibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftLibrary/ftmedia-plugins_ftLibrary_test.iml" group="ftmedia-plugins/ftLibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay.iml" group="ftmedia-plugins/ftPlay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay_ast.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay_ast.iml" group="ftmedia-plugins/ftPlay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay_main.iml" group="ftmedia-plugins/ftPlay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia-plugins/ftPlay/ftmedia-plugins_ftPlay_test.iml" group="ftmedia-plugins/ftPlay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia/ftmedia_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia/ftmedia_main.iml" group="ftmedia" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ftmedia/ftmedia_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ftmedia/ftmedia_test.iml" group="ftmedia" />
+    </modules>
+  </component>
+</project>
