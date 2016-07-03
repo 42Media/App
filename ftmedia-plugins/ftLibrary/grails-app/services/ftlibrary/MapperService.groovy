@@ -1,16 +1,12 @@
 package ftlibrary
-import ftlibrary.VideoAsset
+
 import grails.transaction.Transactional
 import groovy.util.slurpersupport.GPathResult
 import groovy.util.slurpersupport.NodeChildren
 import org.grails.core.DefaultGrailsDomainClass
-import org.jaudiotagger.audio.AudioFile
 import org.jaudiotagger.audio.AudioFileIO
 import org.jaudiotagger.audio.mp3.MP3File
-import org.jaudiotagger.tag.FieldKey
 import org.jaudiotagger.tag.KeyNotFoundException
-import org.jaudiotagger.tag.Tag
-import org.jaudiotagger.tag.TagField
 import org.jaudiotagger.tag.id3.ID3v24FieldKey
 import org.jaudiotagger.tag.id3.ID3v24Tag
 
@@ -68,62 +64,65 @@ class MapperService {
 
         def MP3File file = AudioFileIO.read(mp3)
         def ID3v24Tag tag
+        String src = file.file.path
 
         if(!file.hasID3v2Tag())
             return params
 
         tag = file.getID3v2TagAsv24()
 
-        try {params.put  'title', tag.getFirst(ID3v24FieldKey.TITLE).toString()}
-        catch (KeyNotFoundException e){params.put 'title', ''}
+        try {params.put  'title', tag.getFirst(ID3v24FieldKey.TITLE).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e){params.put 'title', ''}
 
-        try {params.put  'trackArtist', tag.getFirst(ID3v24FieldKey.ARTIST).toString()}
-        catch (KeyNotFoundException e){params.put 'trackArtist', ''}
+        try {params.put  'trackArtist', tag.getFirst(ID3v24FieldKey.ARTIST).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e){params.put 'trackArtist', ''}
 
-        try {params.put  'trackArtistSort', tag.getFirst(ID3v24FieldKey.ARTIST_SORT).toString()}
-        catch (KeyNotFoundException e) {params.put 'trackArtistSort', params?.trackArtist}
+        try {params.put  'trackArtistSort', tag.getFirst(ID3v24FieldKey.ARTIST_SORT).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put 'trackArtistSort', params?.trackArtist}
 
-        try {params.put  'albumArtist', tag.getFirst(ID3v24FieldKey.ALBUM_ARTIST).toString()}
-        catch (KeyNotFoundException e) {params.put 'albumArtist', ''}
+        try {params.put  'albumArtist', tag.getFirst(ID3v24FieldKey.ALBUM_ARTIST).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put 'albumArtist', ''}
 
-        try {params.put  'albumArtistSort', tag.getFirst(ID3v24FieldKey.ALBUM_ARTIST_SORT).toString()}
-        catch (KeyNotFoundException e) {params.put 'albumArtistSort', params?.albumArtist}
+        try {params.put  'albumArtistSort', tag.getFirst(ID3v24FieldKey.ALBUM_ARTIST_SORT).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put 'albumArtistSort', params?.albumArtist}
 
-        try {params.put  'label', tag.getFirst(ID3v24FieldKey.RECORD_LABEL).toString()}
-        catch (KeyNotFoundException e) {params.put  'label', ''}
+        try {params.put  'label', tag.getFirst(ID3v24FieldKey.RECORD_LABEL).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'label', ''}
 
-        try {params.put  'country',  tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASE_COUNTRY).toString()}
-        catch (KeyNotFoundException e) {params.put  'country', ''}
+        try {params.put  'country',  tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASE_COUNTRY).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'country', ''}
 
-        try {params.put  'releaseType', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASE_TYPE).toString()}
-        catch (KeyNotFoundException e) {params.put  'releaseType', ''}
+        try {params.put  'releaseType', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASE_TYPE).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'releaseType', ''}
 
         try {params.put  'trackNumber', tag.getFirst(ID3v24FieldKey.TRACK).toInteger()}
-        catch (KeyNotFoundException e) {params.put  'trackNumber', -1}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'trackNumber', -1}
 
-        try {params.put  'year', tag.getFirst(ID3v24FieldKey.YEAR).toString()}
-        catch (KeyNotFoundException e) {params.put  'year', ''}
+        try {params.put  'year', tag.getFirst(ID3v24FieldKey.YEAR).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'year', ''}
 
         try {params.put  'discNumber', tag.getFirst(ID3v24FieldKey.DISC_NO).toInteger()}
-        catch (KeyNotFoundException e) {params.put  'discNumber', 1}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'discNumber', 1}
 
-        try {params.put  'mbArtistID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_ARTISTID).toString()}
-        catch (KeyNotFoundException e) {params.put  'mbArtistID', ''}
+        try {params.put  'mbArtistID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_ARTISTID).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'mbArtistID', ''}
 
-        try {params.put  'mbAlbumArtistID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASEARTISTID).toString()}
-        catch (KeyNotFoundException e) {params.put  'mbAlbumArtistID', params?.mbArtistID}
+        try {params.put  'mbAlbumArtistID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASEARTISTID).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'mbAlbumArtistID', params?.mbArtistID}
 
-        try {params.put  'mbReleaseID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASEID).toString()}
-        catch (KeyNotFoundException e) {params.put  'mbReleaseID', ''}
+        try {params.put  'mbReleaseID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_RELEASEID).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'mbReleaseID', ''}
 
-        try {params.put  'mbTrackID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_TRACK_ID).toString()}
-        catch (KeyNotFoundException e) {params.put  'mbTrackID', ''}
+        try {params.put  'mbTrackID', tag.getFirst(ID3v24FieldKey.MUSICBRAINZ_TRACK_ID).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'mbTrackID', ''}
 
-        try {params.put 'release',  tag.getFirst(ID3v24FieldKey.ALBUM).toString()}
-        catch (KeyNotFoundException e) {params.put  'release', ''}
+        try {params.put 'release',  tag.getFirst(ID3v24FieldKey.ALBUM).toString().take(254)}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'release', ''}
 
         try {params.put 'runTime', file.getMP3AudioHeader().getTrackLength()}
-        catch (KeyNotFoundException e) {params.put  'runTime', -1}
+        catch (KeyNotFoundException|NullPointerException e) {params.put  'runTime', -1}
+
+        params.put 'source', src.toString().take(254)
 
         return params
     }
