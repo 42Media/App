@@ -4,8 +4,8 @@ import ftcore.MediaAsset
 
 /**
  @author:    atzscherlich
- @version:   0.2
- @date:      2016-06-06
+ @version:   0.3
+ @date:      2016-06-30
  */
 
 class VideoAsset
@@ -22,8 +22,7 @@ class VideoAsset
     String  tagline
 
     String  plot
-
-    Date inserted
+    String source
 
     //MediaAsset mediaAsset
 
@@ -39,26 +38,26 @@ class VideoAsset
     int     imdbID
     int     tmdbID
 
-    //MediaAsset mediaAsset
 
     static hasMany = {
         mediaAsset:MediaAsset
     }
 
     static constraints = {
+        title unique: ['year', 'director']
         originalTitle display:false, nullable: true, blank: true
         sortTitle display:false, nullable: true, blank: true
-        director display:true, nullable: true, blank: true
+        director display:false, nullable: true, blank: true
         studio display:false, nullable: true, blank: true
         country display:false, nullable: true, blank: true
         outline display:false, nullable: true, blank: true
         tagline display:false, nullable: true, blank: true
-        year display:true, nullable: true, blank: true
+        year display:false, nullable: true, blank: true
         plot display:false, nullable: true, blank: true
         runtime display:false, nullable: true, blank: true
         imdbID display:false, nullable: true, blank: true
         tmdbID display:false, nullable: true, blank: true
-        inserted display: true, nullable: true, blank: true
+        source unique: true, maxSize: 255
     }
 
     String toString()
