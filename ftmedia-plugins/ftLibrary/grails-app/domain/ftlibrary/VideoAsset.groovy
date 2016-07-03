@@ -23,6 +23,7 @@ class VideoAsset
 
     String  plot
     String source
+    Date inserted
 
     //MediaAsset mediaAsset
 
@@ -57,7 +58,7 @@ class VideoAsset
         runtime display:false, nullable: true, blank: true
         imdbID display:false, nullable: true, blank: true
         tmdbID display:false, nullable: true, blank: true
-        source unique: true, maxSize: 255
+        source display: false, unique: true, maxSize: 255
     }
 
     String toString()

@@ -151,7 +151,7 @@ class LibraryService {
             assetParams.put 'cover', coverArt
             assetParams.put 'source', file.path
             videoAsset = new VideoAsset(assetParams)
-            //videoAsset.inserted = new Date()
+            videoAsset.inserted = new Date()
         }
         catch (Exception e)
         {
