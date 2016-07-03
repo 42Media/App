@@ -83,3 +83,18 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + show last inserted entry
 + insert filter for music entries
 + insert filter for video entries
+
+#### 2016-06-30
++ music\artist controller
++ music\release controller
++ artist\list action + view
++ artist\show action + view
++ release\list action + view
++ release\show action + view
++ added lastFm\getMetaByAlbum
++ extended lastFM functions to offer image url
++ added default artist.png
++ added default release.png
++ prefer lastFM artwork, if available
++ changed default music view to release\list
++ added navigation from release to releaseArtist\show
