@@ -11,10 +11,13 @@
     float: left;
 }
 
-.movieListStart {
+.start .movieList, .start .musicList {
+    margin: 0;
+    padding: 0;
+}
+
+.start ul{
     list-style: none;
-    /*background-color: hsla(200, 70%, 75%, 0.75);*/
-    background-color: purple;
     margin: 0;
     padding: 0
 }
@@ -23,7 +26,7 @@
     background-color: hsla(200, 50%, 75%, 0.8);
 }
 
-.movieListStart li{
+.movieListStart li, .start li{
     border: 1px solid black;
     width: 10vw;
     padding: 0.1vw;
@@ -31,11 +34,11 @@
     float: left;
 }
 
-.movieListStart li img , .assetList li img{
+.assetList li img, .start li img{
     width: 100%;
 }
 
-.movieListStart li h3{
+.start li h3{
     font-size: medium;
     text-align: center;
 }

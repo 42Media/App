@@ -22,7 +22,7 @@ class MusicService {
             artist ->
             Map dataMap = new HashMap()
             dataMap.put("Name", artist)
-            //dataMap << lastFM.getMetaByArtist(artist)
+            dataMap << lastFM.getMetaByArtist(artist)
             data.add(dataMap)
         }
         data
@@ -47,7 +47,19 @@ class MusicService {
                 entry.put "Type",       row[2]
                 entry.put "Year",       row[3].toString().substring(0,4)
                 entry.put "MBID",       row[4]
-                //entry << lastFM.getMetaByAlbum([mbid: row[4]])
+                if(row[4])
+                {
+                    def metaMap
+                    try {
+                            metaMap = lastFM.getMetaByAlbum([mbid: row[4]])
+                            entry << metaMap
+                        }
+                    catch (Exception e)
+                    {
+                        println(e.getMessage())
+                    }
+                }
+
                 data.add(entry)
         }
         data
@@ -56,6 +68,7 @@ class MusicService {
     static getRelease(String mbReleaseID)
     {
         Map data = new HashMap()
+        assert mbReleaseID.length() > 10
         List tracks = new ArrayList()
         LastFMService lastFM = new LastFMService()
 
@@ -79,10 +92,17 @@ class MusicService {
                 tracks.add(trackData)
         }
 
-        //def metaData = lastFM.getMetaByAlbum([mbid: mbReleaseID])
-        data.put "tracks", tracks
-        //data.put "metaData", metaData
+        try
+        {
+            def metaData = lastFM.getMetaByAlbum([mbid: mbReleaseID])
+            data.put "metaData", metaData
+        }
+        catch (Exception e)
+        {
+            println(e.getMessage())
+        }
 
+        data.put "tracks", tracks
         data
     }
 }

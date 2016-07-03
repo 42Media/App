@@ -1,5 +1,6 @@
 package ftexternalmedia
 
+import ftcore.RestService
 import org.grails.web.json.JSONObject
 import org.springframework.web.client.ResourceAccessException
 
@@ -7,7 +8,7 @@ import java.lang.reflect.GenericSignatureFormatError
 
 class LastFMService {
 
-    def restService
+    def restService = new RestService()
     def apiKey = "5ee677913332bd31fe21f79b15c8129a"
     def url = "http://ws.audioscrobbler.com/2.0/?"
 
@@ -121,6 +122,11 @@ class LastFMService {
         {
             println(e.getMessage())
         }
+
+
+        println(callParams.toString())
+        println()
+        println(json.toString())
 
         Map metaMap = new HashMap()
 

@@ -35,10 +35,10 @@
     </div>
 </div>
 <div style="margin-top: 50px"></div>
-<div class="row">
+<div class="row start">
     <div class="col-xs-4"><a href="/video/index"><h3>Filme</h3></a></div>
-    <div class="col-xs-7">
-        <ul class="movieListStart">
+    <div class="col-xs-7 movieList">
+        <ul>
             <g:if test="${videoList.isEmpty()}">
                 <h3>Keine Filminhalte vorhanden</h3>
             </g:if>
@@ -61,9 +61,9 @@
     </div>
 </div>
 <div style="margin-top: 30px"></div>
-<div class="row">
+<div class="row start">
     <div class="col-xs-4"><a href="/music/index"><h3>Musik</h3></a></div>
-    <div class="col-xs-7 assetList">
+    <div class="col-xs-7 musicList">
         <g:if test="${musicList.isEmpty()}">
             <h3>Keine Musikinhalte vorhanden</h3>
         </g:if>

@@ -99,14 +99,6 @@
             <element id="module-output" name="ftmedia-plugins_ftExternalMedia_ast" />
             <element id="dir-copy" path="$PROJECT_DIR$/ftmedia-plugins/ftExternalMedia/build/resources/ast" />
           </element>
-          <element id="archive" name="ftlibrary-ftmedia-plugins_ftLibrary-0.1.jar">
-            <element id="module-output" name="ftmedia-plugins_ftLibrary_main" />
-            <element id="dir-copy" path="$PROJECT_DIR$/ftmedia-plugins/ftLibrary/build/resources/main" />
-          </element>
-          <element id="archive" name="ftlibrary-ftmedia-plugins_ftLibrary_ast-0.1.jar">
-            <element id="module-output" name="ftmedia-plugins_ftLibrary_ast" />
-            <element id="dir-copy" path="$PROJECT_DIR$/ftmedia-plugins/ftLibrary/build/resources/ast" />
-          </element>
           <element id="archive" name="ftcore-ftmedia-plugins_ftCore-0.1.jar">
             <element id="module-output" name="ftmedia-plugins_ftCore_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/ftmedia-plugins/ftCore/build/resources/main" />
@@ -119,8 +111,16 @@
           <element id="library" level="project" name="Gradle: net.sf.ehcache:ehcache:2.10.1" />
           <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-core:4.0.3.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework.security:spring-security-web:4.0.3.RELEASE" />
-          <element id="library" level="project" name="Gradle: org.jaudiotagger:jaudiotagger:2.0.1" />
           <element id="library" level="project" name="Gradle: org.grails:grails-datastore-rest-client:5.0.1.RELEASE" />
+          <element id="archive" name="ftlibrary-ftmedia-plugins_ftLibrary-0.1.jar">
+            <element id="module-output" name="ftmedia-plugins_ftLibrary_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/ftmedia-plugins/ftLibrary/build/resources/main" />
+          </element>
+          <element id="archive" name="ftlibrary-ftmedia-plugins_ftLibrary_ast-0.1.jar">
+            <element id="module-output" name="ftmedia-plugins_ftLibrary_ast" />
+            <element id="dir-copy" path="$PROJECT_DIR$/ftmedia-plugins/ftLibrary/build/resources/ast" />
+          </element>
+          <element id="library" level="project" name="Gradle: org.jaudiotagger:jaudiotagger:2.0.1" />
           <element id="archive" name="ftplay-ftmedia-plugins_ftPlay-0.1.jar">
             <element id="module-output" name="ftmedia-plugins_ftPlay_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/ftmedia-plugins/ftPlay/build/resources/main" />
@@ -211,8 +211,8 @@
           <element id="library" level="project" name="Gradle: com.google.guava:guava:18.0" />
           <element id="library" level="project" name="Gradle: com.goldmansachs:gs-collections-api:5.1.0" />
           <element id="library" level="project" name="Gradle: com.google.protobuf:protobuf-java:2.5.0" />
-          <element id="library" level="project" name="Gradle: com.google.code.findbugs:jsr305:1.3.9" />
           <element id="library" level="project" name="Gradle: net.minidev:asm:1.0.2" />
+          <element id="library" level="project" name="Gradle: com.google.code.findbugs:jsr305:1.3.9" />
           <element id="library" level="project" name="Gradle: asm:asm:3.3.1" />
         </element>
       </element>
