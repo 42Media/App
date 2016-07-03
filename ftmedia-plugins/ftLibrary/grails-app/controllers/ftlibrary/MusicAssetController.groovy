@@ -1,7 +1,8 @@
 package ftlibrary
 
-import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+
+import static org.springframework.http.HttpStatus.*
 
 @Transactional(readOnly = true)
 class MusicAssetController {
@@ -70,8 +71,11 @@ class MusicAssetController {
     //Scaffold Functions
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 50, 100)
+        /*
+        params.max = Math.min(max ?: 10, 100)
         respond MusicAsset.list(params), model:[musicAssetCount: MusicAsset.count()]
+        */
+        forward controller: "release", action: "list"
     }
 
     def show(MusicAsset musicAsset) {

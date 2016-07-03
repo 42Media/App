@@ -7,11 +7,11 @@ class CoverArtController {
         respond CoverArt.list(params), model:[CoverArtInstanceCount: CoverArt.count()]
     }
 
-    def show(CoverArt CoverArtInstance) {
+    def showAll(CoverArt CoverArtInstance) {
         [CoverArtInstance: CoverArtInstance]
     }
 
-    def showData(CoverArt CoverArtInstance) {
+    def show(CoverArt CoverArtInstance) {
         // write the image to the output stream
         response.outputStream << CoverArtInstance.data
         response.outputStream.flush()

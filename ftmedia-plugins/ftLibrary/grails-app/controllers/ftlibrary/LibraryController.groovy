@@ -20,6 +20,7 @@ class LibraryController
 
         def type = params.type
         def path = params.path
+        def count
 
         if(path == '' || path == null)
         {
@@ -30,27 +31,21 @@ class LibraryController
             {
                 case 'movie':
 
-                    LibraryService.scanMovies(path)
-                    flash.message = "Movies successfull scanned"
+                    count = LibraryService.scanMovies(path)
+                    flash.message = count + " Movies successfull scanned"
 
                     break;
                case 'series':
 
-                    LibraryService.scanSeries(path)
-                    flash.message = "Movies successfull scanned"
+                    count = LibraryService.scanSeries(path)
+                    flash.message = count + " Episodes successfull scanned"
 
                     break;
 
                 case 'music':
 
-                    LibraryService.scanMusic(path)
-                    flash.message = "Movies successfull scanned"
-
-                    /*def ts = new Date()
-                    render(LibraryService.scanMusic())
-                    ts = new Date() - ts
-                    render('Duration: ' + ts)
-                    render('Scanning music')*/
+                    count = LibraryService.scanMusic(path)
+                    flash.message = count + " Tracks successfull scanned"
 
                     break;
 
