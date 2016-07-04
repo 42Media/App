@@ -1,3 +1,8 @@
+.dropdown:hover, .dropdown-menu:hover {
+    display: block;
+    visibility: visible;
+}
+
 .navbar {
     background-color: hsla(200, 50%, 75%, 0.75);
 }
@@ -47,6 +52,12 @@
 
 .musicList h5 {
     margin-top: -2vw;
+}
+
+.trackList ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .assetList li img, .start li img{
@@ -99,7 +110,7 @@
     font-weight: 700;
 }
 
-.assetList .pagination {
+.pagination {
     width: auto;
     margin-right: 1vw;
     padding: 0.25vw;
@@ -108,12 +119,12 @@
     background-color: hsla(200, 50%, 75%, 0.75);
 }
 
-.assetList .pagination a {
+.pagination a {
     margin-top: 2vh;
     padding: 0.1vw;
 }
 
-.assetList .pagination a:hover {
+.pagination a:hover {
     font-weight: bolder;
 }
 

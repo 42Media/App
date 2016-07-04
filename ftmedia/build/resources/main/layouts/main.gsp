@@ -8,16 +8,17 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <asset:javascript src="jquery-2.2.0.min.js"/>
+
 
     <asset:javascript src="bootstrap.js"/>
     <asset:stylesheet src="bootstrap.css"/>
 
     <asset:javascript src="ftmedia/main.js"/>
+
     <asset:stylesheet src="ftmedia/main.css"/>
     <asset:stylesheet src="ftmedia.css" />
 
-
+    <asset:javascript src="jquery-2.2.0.min.js"/>
 
     <g:layoutHead/>
 </head>
