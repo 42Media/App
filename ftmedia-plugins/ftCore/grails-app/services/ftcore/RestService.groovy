@@ -10,7 +10,8 @@ class RestService {
 
         url = url + params.collect { it }.join('&')
 
-        RestResponse rResponse = new RestBuilder().get(url){
+        RestBuilder builder = new RestBuilder(connectTimeout:100)
+        RestResponse rResponse = builder.get(url){
             accept("application/json")
         }
 
