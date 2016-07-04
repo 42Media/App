@@ -67,10 +67,24 @@
         <g:if test="${musicList.isEmpty()}">
             <h3>Keine Musikinhalte vorhanden</h3>
         </g:if>
-
-        <g:each in="${musicList}" var="music">
-            <h3><a data-toggle="modal" href="/music/show/${music.id}" data-target="#modal-music">${music.title}</a></h3>
-        </g:each>
+        <ul>
+            <g:each in="${musicList}" var="release">
+                <li>
+                    <a data-toggle="modal" href="/release/show?mbid=${release.MBID}" data-target="#modal-music">
+                        <g:if test="${release?.AlbumArt}">
+                            <img src="${release?.AlbumArt}" alt="${artist?.Name}" />
+                        </g:if>
+                        <g:else>
+                            <asset:image src="symbole/Release.png" alt="No cover available"/>
+                        </g:else>
+                        <h3>${release.Release} (${release.Year})</h3>
+                    </a>
+                    <g:link data-toggle="modal" data-target="#modal-music" controller="artist" action="show" params="[artist: release.Artist]">
+                        <h5>${release.Artist}</h5>
+                    </g:link>
+                </li>
+            </g:each>
+        </ul>
     </div>
     <div class="col-xs-1">
         <div style="width: 100px">
