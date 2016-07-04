@@ -125,7 +125,7 @@
 .showRelease {
     width: 65vw;
     display: block;
-    background-color: hsla(200, 50%, 75%, 1);
+    /*background-color: hsla(200, 50%, 75%, 1);*/
 }
 
 .showRelease li {
@@ -167,7 +167,7 @@
 }
 
 #show-videoAsset .panel-heading {
-    background-color: hsla(200, 50%, 75%, 0.75);
+    /*background-color: hsla(200, 50%, 75%, 0.75);*/
 }
 
 #show-videoAsset .VideoCover {

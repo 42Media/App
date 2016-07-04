@@ -98,3 +98,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + prefer lastFM artwork, if available
 + changed default music view to release\list
 + added navigation from release to releaseArtist\show
+
+#### 2016-07-04
++ change css properties

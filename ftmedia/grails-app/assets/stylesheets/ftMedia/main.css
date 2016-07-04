@@ -27,6 +27,10 @@ main .row
 {
     margin-top: 20px;
 }
+#modal-music .modal-content
+{
+    width: 65vw;
+}
 
 
 .form input
