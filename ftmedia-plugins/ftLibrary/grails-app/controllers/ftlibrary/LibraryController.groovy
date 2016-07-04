@@ -2,6 +2,8 @@ package ftlibrary
 
 class LibraryController
 {
+    def springSecurityService
+
     static allowedMethods = [editProfile:['POST', 'GET']]
 
     def upload()
@@ -16,6 +18,8 @@ class LibraryController
 
     def scan()
     {
+        def user        = springSecurityService.currentUser
+
         println('Test' + params)
 
         def type = params.type
@@ -31,7 +35,7 @@ class LibraryController
             {
                 case 'movie':
 
-                    count = LibraryService.scanMovies(path)
+                    count = LibraryService.scanMovies(path, user)
                     flash.message = count + " Movies successfull scanned"
 
                     break;
@@ -44,7 +48,7 @@ class LibraryController
 
                 case 'music':
 
-                    count = LibraryService.scanMusic(path)
+                    count = LibraryService.scanMusic(path, user)
                     flash.message = count + " Tracks successfull scanned"
 
                     break;

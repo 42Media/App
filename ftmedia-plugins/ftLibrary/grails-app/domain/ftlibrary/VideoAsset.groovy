@@ -1,6 +1,7 @@
 package ftlibrary
 
 import ftcore.MediaAsset
+import ftcore.security.User
 
 /**
  @author:    atzscherlich
@@ -22,8 +23,10 @@ class VideoAsset
     String  tagline
 
     String  plot
-    String source
-    Date inserted
+    String  source
+    Date    inserted
+
+    User    user
 
     //MediaAsset mediaAsset
 
@@ -58,7 +61,7 @@ class VideoAsset
         runtime display:false, nullable: true, blank: true
         imdbID display:false, nullable: true, blank: true
         tmdbID display:false, nullable: true, blank: true
-        source display: false, unique: true, maxSize: 255
+        source display: false, unique: true, maxSize: 255, nullable: true
     }
 
     String toString()

@@ -10,12 +10,15 @@ class MusicAssetController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     def lastFMService
 
+    def springSecurityService
 
     //Own Functions
 
     def showLast()
     {
-        def musicAssetList = MusicAsset.listOrderByInserted(max: 5, order: "desc")
+        def user            = springSecurityService.currentUser
+
+        def musicAssetList  = MusicAsset.findAllByUser(user, [sort: 'inserted', max: 5, order: "desc"])
 
         render (view: 'index', model: [
                 musicAssetList: musicAssetList
@@ -24,6 +27,7 @@ class MusicAssetController {
 
     def sort()
     {
+        def user    = springSecurityService.currentUser
         def tag     = params.tag
         def order   = params.order
 
@@ -31,12 +35,12 @@ class MusicAssetController {
 
         if(tag == "inserted")
         {
-            musicAssetList = MusicAsset.listOrderByInserted(order: order)
+            musicAssetList = MusicAsset.findAllByUser(user, [sort: 'inserted', order: order])
         }
 
         if(tag == "title")
         {
-            musicAssetList = MusicAsset.listOrderByTitle(order: order)
+            musicAssetList = MusicAsset.findAllByUser(user, [sort: 'title', order: order])
         }
 
         render (view: 'index', model: [
@@ -92,8 +96,11 @@ class MusicAssetController {
 
     def create() {
 
+        def user        = springSecurityService.currentUser
+
         def musicAsset = new MusicAsset(params)
             musicAsset.inserted = new Date()
+            musicAsset.user = user
 
         respond musicAsset
     }

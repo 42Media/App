@@ -6,13 +6,17 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class VideoAssetController {
 
+    def springSecurityService
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     //Own Functions
 
     def showLast()
     {
-        def videoAssetList = VideoAsset.listOrderByInserted(max: 5, order: "desc")
+        def user        = springSecurityService.currentUser
+
+        def videoAssetList = VideoAsset.findAllByUser(user, [sort: 'inserted', max: 5, order: "desc"])
 
         render (view: 'index', model: [
                 videoAssetList: videoAssetList
@@ -21,6 +25,8 @@ class VideoAssetController {
 
     def sort()
     {
+        def user    = springSecurityService.currentUser
+
         def tag     = params.tag
         def order   = params.order
 
@@ -28,12 +34,12 @@ class VideoAssetController {
 
         if(tag == "inserted")
         {
-            videoAssetList = VideoAsset.listOrderByInserted(order: order)
+            videoAssetList = VideoAsset.findAllByUser(user, [sort: 'inserted', order: order])
         }
 
         if(tag == "title")
         {
-            videoAssetList = VideoAsset.listOrderByTitle(order: order)
+            videoAssetList = VideoAsset.findAllByUser(user, [sort: 'title', order: order])
         }
 
         render (view: 'index', model: [
@@ -43,7 +49,6 @@ class VideoAssetController {
 
     def filter()
     {
-
         def videoAssetList = [:]
 
         def name        = params.filterVideoName
@@ -76,8 +81,11 @@ class VideoAssetController {
 
     def create() {
 
+        def user        = springSecurityService.currentUser
+
         def videoAsset = new VideoAsset(params)
             videoAsset.inserted = new Date()
+            videoAsset.user = user
 
         respond videoAsset
     }

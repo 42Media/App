@@ -1,6 +1,7 @@
 package ftlibrary
 
 import ftcore.MediaAsset
+import ftcore.security.User
 
 /**
  @author:    atzscherlich
@@ -31,6 +32,9 @@ class MusicAsset
     int         discNumber
     int         runTime
 
+    Date        inserted
+    User        user
+
     static hasMany = {
         mediaAsset:MediaAsset
     }
@@ -52,7 +56,7 @@ class MusicAsset
                 mbArtistID display:false, nullable: true, blank: true
                 mbTrackID display:false, nullable: true, blank: true
                 mbReleaseID display:false, nullable: true, blank: true
-                source  display:false, nullable: false, unique: true
+                source  display:false, nullable: true, unique: true
             }
 
     String toString()

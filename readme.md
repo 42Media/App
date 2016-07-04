@@ -101,3 +101,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 
 #### 2016-07-04
 + change css properties
++ insert user as property inside domains
++ change upload symbol on dashboard
++ filter result via user

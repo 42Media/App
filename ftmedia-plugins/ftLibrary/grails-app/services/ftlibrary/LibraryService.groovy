@@ -1,5 +1,7 @@
 package ftlibrary
 
+
+import ftcore.security.User
 import ftcore.FileObject
 import ftcore.MediaAsset
 import ftcore.MediaType
@@ -8,7 +10,7 @@ import grails.transaction.Transactional
 @Transactional
 class LibraryService {
 
-    static Integer scanMovies(String src)
+    static Integer scanMovies(String src, User user)
     {
 
         Map scanResult = ScanFSService.getMovies(src)
@@ -16,7 +18,7 @@ class LibraryService {
         scanResult.each
         {
             folder, file ->
-                processMovieItem(file)
+                processMovieItem(file, user)
         }
 
         return scanResult.size()
@@ -27,13 +29,13 @@ class LibraryService {
         return 42
     }
 
-    static Integer scanMusic(String src)
+    static Integer scanMusic(String src, User user)
     {
         List<File> scanResult = ScanFSService.getMediaFiles(src, 'Music')
         scanResult.each
         {
             file ->
-                processMusicItem(file)
+                processMusicItem(file, user)
         }
 
         return scanResult.size()
@@ -110,8 +112,9 @@ class LibraryService {
         mediaAsset
     }
 
-    private static boolean processMovieItem(File file)
+    private static boolean processMovieItem(File file, User user)
     {
+
         println('Processing: ' + file)
 
         def fileObject  = null
@@ -152,6 +155,7 @@ class LibraryService {
             assetParams.put 'source', file.path
             videoAsset = new VideoAsset(assetParams)
             videoAsset.inserted = new Date()
+            videoAsset.user = user
         }
         catch (Exception e)
         {
@@ -170,8 +174,9 @@ class LibraryService {
         fileObject && mediaAsset && videoAsset
     }
 
-    private static boolean processMusicItem(File file)
+    private static boolean processMusicItem(File file, User user)
     {
+
         if(!file.path.endsWith('.mp3'))
             return false
         println('Processing: ' + file)
@@ -197,6 +202,8 @@ class LibraryService {
             assetParams = MapperService.mapMP3Tags(file)
             assetParams.put 'mediaAsset', mediaAsset
             asset = new MusicAsset(assetParams)
+            asset.inserted = new Date()
+            asset.user = user
         }
         catch (Exception e)
         {

@@ -56,7 +56,7 @@
     <div class="col-xs-1">
         <div style="width: 100px">
             <a data-toggle="modal" href="/video/create" data-target="#modal-video"><asset:image src="symbole/kreuz.png" /></a>
-            <a data-toggle="modal" href="/library/upload?type=movie" data-target="#modal-video"><asset:image src="symbole/kreuz.png" /></a>
+            <a data-toggle="modal" href="/library/upload?type=movie" data-target="#modal-video"><asset:image src="symbole/upload.png" /></a>
         </div>
     </div>
 </div>
@@ -75,7 +75,7 @@
     <div class="col-xs-1">
         <div style="width: 100px">
             <a data-toggle="modal" href="/music/create" data-target="#modal-music"><asset:image src="symbole/kreuz.png" /></a>
-            <a data-toggle="modal" href="/library/upload?type=music" data-target="#modal-music"><asset:image src="symbole/kreuz.png" /></a>
+            <a data-toggle="modal" href="/library/upload?type=music" data-target="#modal-music"><asset:image src="symbole/upload.png" /></a>
         </div>
     </div>
 </div>
