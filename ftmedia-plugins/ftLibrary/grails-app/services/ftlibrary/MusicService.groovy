@@ -4,10 +4,12 @@ import ftexternalmedia.LastFMService
 
 class MusicService {
 
-    static listArtists(Boolean onlyAlbumArtists) {
+
+    ArrayList listArtists(Boolean onlyAlbumArtists) {
         List<String> artistList
         List data = new ArrayList()
         LastFMService lastFM = new LastFMService()
+
 
         String criteria = onlyAlbumArtists ? "albumArtist" : "trackArtist"
 
@@ -15,29 +17,40 @@ class MusicService {
             projections {
                 distinct(criteria)
             }
-         }
+        }
 
 
         artistList.each {
             artist ->
-            Map dataMap = new HashMap()
-            dataMap.put("Name", artist)
-            dataMap << lastFM.getMetaByArtist(artist)
-            data.add(dataMap)
+                Map dataMap = new HashMap()
+                dataMap.put("Name", artist)
+                try
+                {
+                    dataMap << lastFM.getMetaByArtist(artist)
+                }
+                catch (Exception e)
+                {
+                    println(e.getMessage())
+                }
+
+                data.add(dataMap)
         }
         data
     }
 
-    static listReleases(String artist)
+    ArrayList listReleases(Map params)
     {
         List data = new ArrayList()
         LastFMService lastFM = new LastFMService()
+        Integer max
+        if(params?.containsKey('max'))
+            max = Math.min(params.max ?: 10, 100)
 
         String hqlQuery = "select distinct albumArtist, release, releaseType, year, mbReleaseID from MusicAsset "
-        if(artist)
-            hqlQuery+= "where albumArtist='" + artist + "' "
+        if(params?.containsKey('artist'))
+            hqlQuery+= "where albumArtist='" + params.artist + "' "
         hqlQuery+= "order by albumArtist, year, release"
-        def result = MusicAsset.executeQuery(hqlQuery)
+        def result = MusicAsset.executeQuery(hqlQuery, [max: max])
 
         result.each {
             row ->
@@ -51,9 +64,9 @@ class MusicService {
                 {
                     def metaMap
                     try {
-                            metaMap = lastFM.getMetaByAlbum([mbid: row[4]])
-                            entry << metaMap
-                        }
+                        metaMap = lastFM.getMetaByAlbum([mbid: row[4]])
+                        entry << metaMap
+                    }
                     catch (Exception e)
                     {
                         println(e.getMessage())
@@ -65,17 +78,16 @@ class MusicService {
         data
     }
 
-    static getRelease(String mbReleaseID)
+    HashMap getRelease(String mbReleaseID)
     {
         Map data = new HashMap()
         assert mbReleaseID.length() > 10
         List tracks = new ArrayList()
         LastFMService lastFM = new LastFMService()
 
-
         String hqlQuery =
                 "select distinct discNumber, trackNumber, title, trackArtist, runTime, release, albumArtist from MusicAsset " +
-                "where mbReleaseID = '" + mbReleaseID + "' order by discNumber, trackNumber"
+                        "where mbReleaseID = '" + mbReleaseID + "' order by discNumber, trackNumber"
         def result = MusicAsset.executeQuery(hqlQuery)
 
         result.each {
@@ -101,6 +113,7 @@ class MusicService {
         {
             println(e.getMessage())
         }
+
 
         data.put "tracks", tracks
         data

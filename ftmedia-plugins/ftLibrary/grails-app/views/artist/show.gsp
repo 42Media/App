@@ -16,6 +16,11 @@
             </g:else>
         </div>
         <div class="panel-body">
+            <g:each in="${artist}" var="data">
+                ${data.key}: ${data.value}</br>
+            </g:each>
+        </div>
+        <div class="panel-body">
             <div class="releaseList assetList">
                 <h4>Veröffentlichungen:</h4>
                 <ul>

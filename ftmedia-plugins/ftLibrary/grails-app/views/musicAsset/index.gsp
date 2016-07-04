@@ -12,6 +12,8 @@
                     <ul class="nav nav-sidebar">
                         <li><a data-toggle="modal" href="/music/create" data-target="#modal"><b>Musik hinzuf&uuml;gen</b></a></li>
                         <li><a href="/music/showLast"><b>Zuletzt hinzuf&uuml;gt</b></a></li>
+                        <li><a href="/artist/list"><b>K&uuml;nstler</b></a></li>
+                        <li><a href="/release/list"><b>Alben</b></a></li>
                         <li><a href="#">Beste Bewertung</a></li>
                         <li><a href="#">Bereits geh&ouml;rt</a></li>
                     </ul>
@@ -35,17 +37,23 @@
                     </ul>
 
                 </div>
-                <div class="col-md-10">
-                    <h4>Musikalben</h4>
+                <div class="col-md-10 trackList">
+                    <h4>Titel</h4>
+                    <ul>
                     <g:each in="${musicAssetList}" var="music">
-                        <div class="col-md-2">
+                        <li>
                             <a data-toggle="modal" href="/music/show/${music.id}" data-target="#modal-music">${music.title}</a>
-                        </div>
+                        </li>
                     </g:each>
+                    </ul>
+                    <div class="pagination">
+                        <g:paginate total="${musicAssetCount ?: 0}" />
+                    </div>
                 </div>
 
             </div>
         </div>
+
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

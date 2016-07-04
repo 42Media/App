@@ -29,6 +29,12 @@
                 </div>
             </div>
         </div>
+        <div class="panel-heading">LastFM</div>
+        <div class=""panel-body>
+            <g:each in="${release?.metaData}" var="data">
+                ${data.key}: ${data.value}</br>
+            </g:each>
+        </div>
     </div>
 </div>
 </body>

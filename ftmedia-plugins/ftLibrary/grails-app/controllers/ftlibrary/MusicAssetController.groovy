@@ -75,11 +75,10 @@ class MusicAssetController {
     //Scaffold Functions
 
     def index(Integer max) {
-        /*
+
         params.max = Math.min(max ?: 10, 100)
         respond MusicAsset.list(params), model:[musicAssetCount: MusicAsset.count()]
-        */
-        forward controller: "release", action: "list"
+
     }
 
     def show(MusicAsset musicAsset) {

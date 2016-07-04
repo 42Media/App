@@ -6,13 +6,15 @@ class ReleaseController {
 
     def list()
     {
-        ArrayList res = MusicService.listReleases()
+        MusicService service = new MusicService()
+        ArrayList res = service.listReleases()
         [releases: res]
     }
 
     def show(String mbid)
     {
-        Map res = MusicService.getRelease(mbid)
+        MusicService service = new MusicService()
+        Map res = service.getRelease(mbid)
         [release: res]
     }
 }

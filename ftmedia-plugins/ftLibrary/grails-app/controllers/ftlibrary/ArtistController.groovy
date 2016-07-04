@@ -1,5 +1,7 @@
 package ftlibrary
 
+import ftexternalmedia.LastFMService
+
 class ArtistController {
 
     def index(Integer max)
@@ -10,14 +12,18 @@ class ArtistController {
 
     def list()
     {
-        def res = MusicService.listArtists(true)
+        MusicService service = new MusicService()
+        def res = service.listArtists(true)
         [albumArtists: res]
     }
 
     def show(String artist)
     {
-        ArrayList res = MusicService.listReleases(artist)
-        [releases: res]
+        MusicService service = new MusicService()
+        LastFMService lastFM = new LastFMService()
+        ArrayList releaseData = service.listReleases([artist: artist])
+        Map artistData = lastFM.getMetaByArtist(artist)
+        [releases: releaseData, artist:artistData]
     }
 
 }
