@@ -104,3 +104,6 @@ Hier kommt eine Beschreibung hin, wie das Programm im Developer-Mode verwendet w
 + insert user as property inside domains
 + change upload symbol on dashboard
 + filter result via user
+
+#### 2016-07-05
++ create unit-test for musicAsset save action
