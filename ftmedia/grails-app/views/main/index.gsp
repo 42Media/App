@@ -46,7 +46,7 @@
             <g:each in="${videoList}" var="video">
                 <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">
                     <li>
-                        <img src="/coverArt/show/${video.id}" />
+                        <img src="/coverArt/show/${video.cover.id}" />
                         <h3>${video.title}</h3>
                     </li>
                 </a>

@@ -11,7 +11,7 @@
         <!-- Default panel contents -->
         <div class="panel-heading">Eigene Daten</div>
         <div class="VideoCover">
-            <img src="/coverArt/show/${videoAsset.id}" width="100%" />
+            <img src="/coverArt/show/${videoAsset.cover.id}" width="100%" />
         </div>
         <div class="panel-body">
             <f:display bean="videoAsset" />

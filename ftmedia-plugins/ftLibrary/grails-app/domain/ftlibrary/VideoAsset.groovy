@@ -25,6 +25,7 @@ class VideoAsset
     String  plot
     String  source
     Date    inserted
+    CoverArt cover
 
     User    user
 
@@ -62,6 +63,7 @@ class VideoAsset
         imdbID display:false, nullable: true, blank: true
         tmdbID display:false, nullable: true, blank: true
         source display: false, unique: true, maxSize: 255, nullable: true
+        cover nullable: true
     }
 
     String toString()

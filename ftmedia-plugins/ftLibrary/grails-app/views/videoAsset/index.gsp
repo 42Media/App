@@ -39,7 +39,7 @@
                         <g:each in="${videoAssetList}" var="video">
                             <li>
                                 <a data-toggle="modal" href="/video/show/${video.id}" data-target="#modal-video">
-                                    <img src="/coverArt/show/${video.id}" />
+                                    <img src="/coverArt/show/${video.cover.id}" />
                                     <h3>
                                         ${video.title}
                                         <g:if test="${video.year}">

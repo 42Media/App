@@ -123,11 +123,6 @@ class LastFMService {
             println(e.getMessage())
         }
 
-
-        println(callParams.toString())
-        println()
-        println(json.toString())
-
         Map metaMap = new HashMap()
 
         metaMap.put("Albumkünstler", json.album.artist)
