@@ -27,7 +27,7 @@ main .row
 {
     margin-top: 20px;
 }
-#modal-music .modal-content
+#modal-music .modal-content, .modal-dialog
 {
     width: 65vw;
 }
