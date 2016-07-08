@@ -2,7 +2,7 @@
 
 ## Quickstart
 
-+ verify, that JAVA_HOME is set to the JDK directory
++ verify, that JAVA_HOME is set to a JDK installation
 + download latest version of grails from https://grails.org/download.html
 + set GRAILS_HOME variable to the installation path of grails
 + open CLI
