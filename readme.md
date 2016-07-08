@@ -2,10 +2,12 @@
 
 ## Quickstart
 
++ verify, that JAVA_HOME is set to the JDK directory
 + download latest version of grails from https://grails.org/download.html
 + set GRAILS_HOME variable to the installation path of grails
++ open CLI
 + change into the ftmedia directory
-+ run "grails run-app" into the CLI
++ run "grails run-app"
 
 ## Changelogs
 
